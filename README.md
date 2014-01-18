@@ -1,19 +1,42 @@
-lib-boilerplate
+Entity Blueprint Manager
 ===============
 
-Simple boilerplate project for node style library
 
-
-How to use
-==========
-
-(instructions from stack overflow topic at http://stackoverflow.com/questions/4096448/git-workflow-using-one-repo-as-the-basis-for-another )
-* clone this repo
-  * git clone https://github.com/shaddockh/lib*boilerplate.git new_proj
-* remove the origin repo
-  * cd new_proj
-  * git remote rm origin
-* create a new origin to commit to
-  * git remote add origin https://github.com/user/new_proj.git
-* sync up
-  * git push origin master
+Generic blueprint manager.  What this will do is allow you
+to define a heirarchy of templates that descend from each other.
+when creating a blueprint, it will walk up the entire tree of the
+heirarchy and fill in any blank values that are provided at parent levels
+and give you a fully hydrated blueprint.
+ 
+ie:
+``` 
+  blueprints: {
+   parent: {
+       inherits: '_base'
+       ,component1: {
+           val1: 'value'
+           ,val2: 'valParent'
+       }
+   },
+   child: {
+       inherits: 'parent'
+       ,component1: {
+           val3: 'val3'
+           ,val2: 'valChild'  //will override parent!
+       }
+   }
+ 
+  }
+ 
+  generateInstanceBlueprint('child') will create:
+ 
+  {
+    inherits: 'child'
+    id: 10293
+    ,component1: {
+       val1: 'value'
+       ,val2: 'valChilde'
+       ,val3: 'val3'
+   }
+  }
+```

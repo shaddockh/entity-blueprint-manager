@@ -24,6 +24,7 @@
     "should": "latest",
     "grunt-jsbeautifier": "~0.2.6",
     "matchdep": "~0.3.0",
-    "grunt-mocha-test": "~0.8.1"
+    "grunt-mocha-test": "~0.8.1",
+    "chai": "~1.8.1"
   }
 }
