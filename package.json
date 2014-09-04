@@ -1,6 +1,6 @@
 {
   "name": "entity-blueprint-manager",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Entity component system",
   "main": "lib/blueprintLibrary",
   "directories": {
