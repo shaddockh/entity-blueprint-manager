@@ -2,7 +2,7 @@
   "name": "entity-blueprint-manager",
   "version": "0.0.1",
   "description": "Entity component system",
-  "main": "lib/main.js",
+  "main": "lib/blueprintLibrary",
   "directories": {
     "test": "test"
   },
