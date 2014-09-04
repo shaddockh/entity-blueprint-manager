@@ -1,7 +1,7 @@
 {
-  "name": "lib-boilerplate",
+  "name": "entity-blueprint-manager",
   "version": "0.0.1",
-  "description": "lib-boilerplate ===============",
+  "description": "Entity component system",
   "main": "lib/main.js",
   "directories": {
     "test": "test"
@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaddockh/lib-boilerplate.git"
+    "url": "https://github.com/shaddockh/entity-blueprint-manager.git"
   },
   "author": "T. Shaddock Heath",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shaddockh/lib-boilerplate/issues"
+    "url": "https://github.com/shaddockh/entity-blueprint-manager/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
