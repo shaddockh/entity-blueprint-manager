@@ -5,7 +5,7 @@
 /* global: describe, it, suite, test, setup */
 
 var assert = require('chai').assert;
-var blueprintLibrary = require('lib/blueprintLibrary');
+var blueprintLibrary = require('lib/blueprintCatalog');
 
 /*
  * blueprint library
@@ -115,6 +115,7 @@ suite("module: blueprintLibrary", function () {
     });
 
     test('load single blueprint should throw an error if loading a duplicate blueprint and dupe checking is turned on.');
+    test('load single blueprint should throw an error if loading a duplicate blueprint and dupe checking is turned on and different case names.');
 
     test('load single blueprint should not throw an error if loading a blueprint with inherits value that does not exist in library', function () {
       var bp = {
@@ -175,6 +176,11 @@ suite("module: blueprintLibrary", function () {
       assert.equal('test', bp.component1.prop1);
     });
 
+    test('should return a hydrated blueprint regardless of casing', function () {
+      var bp = blueprintLibrary.getBlueprint('Child');
+      assert.equal('test', bp.component1.prop1);
+    });
+
     test('hydrated blueprint should add properties to base blueprint', function () {
       var bp = blueprintLibrary.getBlueprint('child');
       assert.equal('addl', bp.component1.addlProp);
@@ -214,7 +220,7 @@ suite("module: blueprintLibrary", function () {
       var testFunc = function () {
         blueprintLibrary.getBlueprint('not-exist');
       };
-      assert.throws(testFunc, /Undefined blueprint: not-exist/);
+      assert.throws(testFunc, /Item does not exist in catalog: not-exist/);
     });
   });
 
@@ -254,7 +260,7 @@ suite("module: blueprintLibrary", function () {
       });
       assert.throws(function () {
         blueprintLibrary.getBlueprint('test');
-      }, /Undefined blueprint: test/);
+      }, /Item does not exist in catalog: test/);
     });
   });
 
