@@ -120,7 +120,7 @@ suite("module: blueprintLibrary", function () {
     test('load single blueprint should not throw an error if loading a blueprint with inherits value that does not exist in library', function () {
       var bp = {
         inherits: 'unknown',
-        name: 'testBp',
+        name: 'testBp'
       };
       var testFunc = function () {
         blueprintLibrary.loadSingleBlueprint(bp);
@@ -206,7 +206,7 @@ suite("module: blueprintLibrary", function () {
     test('should throw an error if trying to hydrate a blueprint that has an inherits value that does not exist in the library', function () {
       var bp = {
         inherits: 'not-added',
-        name: 'testBp',
+        name: 'testBp'
       };
       blueprintLibrary.loadSingleBlueprint(bp);
 
