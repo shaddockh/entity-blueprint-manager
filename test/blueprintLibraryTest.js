@@ -213,7 +213,7 @@ suite("module: blueprintLibrary", function () {
       var testFunc = function () {
         blueprintLibrary.getBlueprint('testBp');
       };
-      assert.throws(testFunc, /testBp inherits from undefined blueprint: not-added/);
+      assert.throws(testFunc, /Blueprint: "testBp" inherits from undefined blueprint: "not-added"/);
     });
 
     test('should throw an error if trying to get a blueprint that does not exist', function () {
@@ -264,7 +264,19 @@ suite("module: blueprintLibrary", function () {
     });
   });
 
-  test('.hydrateAllBlueprints');
+  test('.hydrateAllBlueprints', function () {
+    blueprintLibrary.hydrateAllBlueprints();
+  });
+  test('.hydrateAllBlueprints Should throw error', function () {
+    blueprintLibrary.loadSingleBlueprint({
+      inherits: 'unknown',
+      name: 'errorblueprint'
+    });
+    var testFunc = function () {
+      blueprintLibrary.hydrateAllBlueprints();
+    };
+    assert.throws(testFunc, /Blueprint: "errorblueprint" inherits from undefined blueprint: "unknown"/);
+  });
 
   /*
    * .find tests
