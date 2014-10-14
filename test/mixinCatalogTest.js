@@ -5,14 +5,15 @@
 /* global: describe, it, suite, test, setup */
 
 var assert = require('chai').assert;
-var mixinCatalog = require('lib/mixinCatalog');
+var MixinCatalog = require('lib/mixinCatalog');
+var mixins = new MixinCatalog();
 
 /*
  * blueprint library
  */
-suite("module: mixinCatalog", function () {
+suite("module: mixins", function () {
   setup(function () {
-    mixinCatalog.clear();
+    mixins.clear();
 
     /* seed with some mixins */
 
@@ -26,22 +27,21 @@ suite("module: mixinCatalog", function () {
 
       }
     };
-    mixinCatalog.loadMixins(block);
+    mixins.loadMixins(block);
 
   });
 
   test('should be able to load', function () {
-    //var mixinCatalog = require('core/mixinCatalog');
-    assert.isDefined(mixinCatalog);
+    assert.isDefined(mixins);
   });
 
   suite('.clear', function () {
     test('clears out catalog', function () {
 
-      assert.notEqual(0, mixinCatalog.getAllMixinNames().length);
+      assert.notEqual(0, mixins.getAllMixinNames().length);
 
-      mixinCatalog.clear();
-      assert.equal(0, mixinCatalog.getAllMixinNames().length);
+      mixins.clear();
+      assert.equal(0, mixins.getAllMixinNames().length);
 
     });
 
@@ -57,9 +57,9 @@ suite("module: mixinCatalog", function () {
         name: 'mixin1'
       };
 
-      mixinCatalog.loadSingleMixin(mixin);
+      mixins.loadSingleMixin(mixin);
 
-      var result = mixinCatalog.getMixin('mixin1');
+      var result = mixins.getMixin('mixin1');
       assert.isDefined(result);
       assert.equal('mixin1', result.name);
 
@@ -68,9 +68,9 @@ suite("module: mixinCatalog", function () {
       var mixin = {
         name: 'mixin1'
       };
-      mixinCatalog.loadSingleMixin(mixin);
+      mixins.loadSingleMixin(mixin);
 
-      var result = mixinCatalog.getMixin('mixin1');
+      var result = mixins.getMixin('mixin1');
       assert.isDefined(result);
       assert.equal('mixin1', result.name);
     });
@@ -93,9 +93,9 @@ suite("module: mixinCatalog", function () {
           }
         }
       };
-      mixinCatalog.clear();
-      mixinCatalog.loadMixins(block);
-      var result = mixinCatalog.getMixin('mixin1');
+      mixins.clear();
+      mixins.loadMixins(block);
+      var result = mixins.getMixin('mixin1');
       assert.isDefined(result);
       console.log(result);
       assert.equal('_base', result.inherits);
@@ -110,10 +110,10 @@ suite("module: mixinCatalog", function () {
           }
         }
       };
-      mixinCatalog.loadMixins(block);
-      mixinCatalog.loadMixins(block);
+      mixins.loadMixins(block);
+      mixins.loadMixins(block);
 
-      var result = mixinCatalog.getMixin('mixin1');
+      var result = mixins.getMixin('mixin1');
       assert.isDefined(result);
     });
   });
@@ -124,18 +124,18 @@ suite("module: mixinCatalog", function () {
   suite('.getMxin', function () {
 
     test('should return mixin', function () {
-      var bp = mixinCatalog.getMixin('mixin1');
+      var bp = mixins.getMixin('mixin1');
       assert.isDefined(bp);
     });
 
     test('should return mixin regardless of case', function () {
-      var bp = mixinCatalog.getMixin('MixIn1');
+      var bp = mixins.getMixin('MixIn1');
       assert.isDefined(bp);
     });
 
     test('should throw an error if trying to get a mixin that does not exist', function () {
       var testFunc = function () {
-        mixinCatalog.getMixin('not-exist');
+        mixins.getMixin('not-exist');
       };
       assert.throws(testFunc, /Item does not exist in catalog: not-exist/);
     });
@@ -147,7 +147,7 @@ suite("module: mixinCatalog", function () {
   suite('.getAllMixinNames', function () {
 
     test('should list all mixin names', function () {
-      assert.deepEqual(['mixin1', 'mixin2'], mixinCatalog.getAllMixinNames());
+      assert.deepEqual(['mixin1', 'mixin2'], mixins.getAllMixinNames());
     });
 
   });
