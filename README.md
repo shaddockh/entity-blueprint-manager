@@ -47,3 +47,10 @@ returns
 }
 ```
  
+CHANGES
+====
+
+2014-10-20
+====
+* Added hasBlueprint(name) to blueprintCatalog
+* Added hasMixin(name) to mixinCatalog

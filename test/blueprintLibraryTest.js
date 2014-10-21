@@ -237,6 +237,20 @@ suite("module: blueprintLibrary", function () {
   });
 
   /*
+   * .hasBlueprint tests
+   */
+  suite('.hasBlueprint', function () {
+
+    test('should have blueprint', function () {
+      assert.isTrue(blueprintLibrary.hasBlueprint('parent'));
+    });
+
+    test('should not have blueprint', function () {
+      assert.isFalse(blueprintLibrary.hasBlueprint('bp33'));
+    });
+
+  });
+  /*
    * .getBlueprintFromInstance tests
    */
   suite('.getBlueprintFromInstance', function () {

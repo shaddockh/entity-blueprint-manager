@@ -142,12 +142,27 @@ suite("module: mixins", function () {
   });
 
   /*
-   * .getAllBlueprintNames tests
+   * .getAllMixinNames tests
    */
   suite('.getAllMixinNames', function () {
 
     test('should list all mixin names', function () {
       assert.deepEqual(['mixin1', 'mixin2'], mixins.getAllMixinNames());
+    });
+
+  });
+
+  /*
+   * .hasMixin tests
+   */
+  suite('.hasMixin', function () {
+
+    test('should have mixin', function () {
+      assert.isTrue(mixins.hasMixin('mixin1'));
+    });
+
+    test('should not have mixin', function () {
+      assert.isFalse(mixins.hasMixin('mixin33'));
     });
 
   });
