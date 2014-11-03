@@ -234,6 +234,11 @@ suite("module: blueprintLibrary", function () {
       assert.deepEqual(['grandparent', 'parent', 'child', 'child2'], blueprintLibrary.getAllBlueprintNames());
     });
 
+    test('should list all blueprint names multiple times', function () {
+      assert.deepEqual(['grandparent', 'parent', 'child', 'child2'], blueprintLibrary.getAllBlueprintNames());
+      assert.deepEqual(['grandparent', 'parent', 'child', 'child2'], blueprintLibrary.getAllBlueprintNames());
+    });
+
   });
 
   /*
