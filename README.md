@@ -54,3 +54,8 @@ CHANGES
 ---
 * Added hasBlueprint(name) to blueprintCatalog
 * Added hasMixin(name) to mixinCatalog
+
+2015-07-10
+---
+* added an index.js that returns the different components so you can do: require('entity-blueprint-lib').blueprintCatalog;
+
