@@ -26,7 +26,8 @@ blueprints: {
 
 }
 
-var bpLib = require('blueprintLibrary');
+var BlueprintCatalog = require('blueprintCatalog');
+var bpLib = new BlueprintCatalog();
 bpLib.loadBlueprints(blueprints);
 ```
 
@@ -58,4 +59,8 @@ CHANGES
 2015-07-10
 ---
 * added an index.js that returns the different components so you can do: require('entity-blueprint-lib').blueprintCatalog;
+
+2015-07-15
+---
+* exposed blueprintCatalog.extendBlueprint for use outside the library as a utility function.  
 
