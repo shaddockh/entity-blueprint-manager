@@ -1,3 +1,4 @@
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 var dictionary_1 = require("./dictionary");
 /**
@@ -301,3 +302,231 @@ var BlueprintCatalog = (function () {
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = BlueprintCatalog;
+
+},{"./dictionary":2}],2:[function(require,module,exports){
+/**
+ *
+ * Created by shaddockh on 9/28/14.
+ */
+"use strict";
+/**
+ * Dictionary class.  Allows for creating a case-insensitive dictionary
+ */
+var Dictionary = (function () {
+    function Dictionary(opts) {
+        if (opts === void 0) { opts = {
+            ignoreCase: true
+        }; }
+        this._catalog = {};
+        this._keys = [];
+        this._ignoreCase = true;
+        this._ignoreCase = opts.ignoreCase;
+    }
+    /**
+     * Clears the catalog
+     *
+     * @method clear
+     */
+    Dictionary.prototype.clear = function () {
+        this._catalog = {};
+        // Note: according to JSPerf this is the fastest way to clear an array
+        var k = this._keys;
+        while (k.length > 0) {
+            k.pop();
+        }
+    };
+    /**
+     * Return true if the dictionary contains the provided key
+     * @param key
+     * @returns {boolean|*}
+     */
+    Dictionary.prototype.containsKey = function (key) {
+        key = this._ignoreCase ? key.toUpperCase() : key;
+        return this._catalog.hasOwnProperty(key);
+    };
+    /**
+     * loads a single item into the dictionary with the provided key name.  Will throw an error if there is
+     * already an item with this key in the catalog.
+     *
+     * @param key
+     * @param item
+     */
+    Dictionary.prototype.add = function (key, item) {
+        var newkey = this._ignoreCase ? key.toUpperCase() : key;
+        if (typeof this._catalog[newkey] !== "undefined") {
+            throw new Error("Duplicate item detected: " + key);
+        }
+        else {
+            this._catalog[newkey] = item;
+            this._keys.push(key);
+        }
+    };
+    /**
+     * loads a block of items into the dictionary.  They need to be in the format
+     * {
+     *   key: object,
+     *   key: object
+     * }
+     *
+     * @param block
+     */
+    Dictionary.prototype.addItems = function (block) {
+        for (var itemName in block) {
+            this.add(itemName, block);
+        }
+    };
+    ;
+    /**
+     * returns an item specified by the key provided in the catalog
+     * @param key
+     * @returns {*}
+     */
+    Dictionary.prototype.get = function (key) {
+        var newkey = this._ignoreCase ? key.toUpperCase() : key;
+        if (!this._catalog.hasOwnProperty(newkey)) {
+            throw new Error("Item does not exist in catalog: " + key);
+        }
+        return this._catalog[newkey];
+    };
+    ;
+    Dictionary.prototype.getItem = function (key) {
+        console.error("Deprecated: Dictionary.getItem");
+        return this.get(key);
+    };
+    ;
+    /**
+     * returns an array of all key names in the catalog
+     * @returns {Array}
+     */
+    Dictionary.prototype.getAllKeys = function () {
+        return this._keys.slice();
+    };
+    ;
+    /**
+     * iterates over the items in the catalog and executes callback for each element
+     * @param callback format: function(item, key)
+     */
+    Dictionary.prototype.forEach = function (callback) {
+        var dict = this;
+        this._keys.forEach(function (key) {
+            callback(dict.get(key), key);
+        });
+    };
+    ;
+    /**
+     * find an item by providing a filter that will be called for each item.
+     * if limit is provided, it will stop iterating once the limit of found items is met.
+     *
+     * @method find
+     * @param {function} filt
+     * @param {int} limit
+     * @return {Array} matches
+     */
+    Dictionary.prototype.find = function (filt, limit) {
+        var results = [];
+        if (typeof (filt) !== "function") {
+            throw new Error(".find must be provided a function to use for filtering");
+        }
+        limit = limit || -1;
+        var item;
+        for (var key in this._catalog) {
+            item = this._catalog[key];
+            if (filt(item)) {
+                results.push(item);
+            }
+        }
+        return results;
+    };
+    ;
+    return Dictionary;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Dictionary;
+
+},{}],3:[function(require,module,exports){
+"use strict";
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
+__export(require("./blueprintCatalog"));
+__export(require("./dictionary"));
+__export(require("./mixinCatalog"));
+
+},{"./blueprintCatalog":1,"./dictionary":2,"./mixinCatalog":4}],4:[function(require,module,exports){
+"use strict";
+var dictionary_1 = require("./dictionary");
+"use strict";
+/**
+ * mixin catalog
+ */
+var MixinCatalog = (function () {
+    function MixinCatalog() {
+        this.mixinDictionary = new dictionary_1.default({
+            ignoreCase: true
+        });
+    }
+    /**
+     * Clears the mixin and resets everything
+     *
+     * @method clear
+     */
+    MixinCatalog.prototype.clear = function () {
+        this.mixinDictionary.clear();
+    };
+    /**
+     * loads a single mixin into the dictionary.
+     * progressCallback can optionally be provided as:
+     *   function(mixinName, true|false (loaded), msg)
+     */
+    MixinCatalog.prototype.loadSingleMixin = function (mixin, progressCallback) {
+        try {
+            this.mixinDictionary.add(mixin.name, mixin);
+            if (progressCallback) {
+                progressCallback(mixin.name, true, "Loaded mixin: " + mixin.name);
+            }
+        }
+        catch (e) {
+            if (progressCallback) {
+                progressCallback(mixin.name, false, e.message);
+            }
+        }
+    };
+    /**
+     * loads a block of mixins into the dictionary.  They need to be in the format
+     * {
+     *   mixinName: { mixin details ... }
+     *   mixinName: { mixin details ... }
+     * }
+     * @param block block of mixins
+     * @param progressCallback function to be provided as callback with signature function(mixinName, bool loaded, message)
+     */
+    MixinCatalog.prototype.loadMixins = function (block, progressCallback) {
+        for (var mixinName in block) {
+            this.loadSingleMixin(block[mixinName], progressCallback);
+        }
+    };
+    /**
+     * will return a component by name
+     * @param name name of the mixin to retrieve
+     * @returns Object mixin object
+     */
+    MixinCatalog.prototype.getMixin = function (name) {
+        return this.mixinDictionary.get(name);
+    };
+    /**
+     * will return an array of mixin names
+     * @returns {Array}
+     */
+    MixinCatalog.prototype.getAllMixinNames = function () {
+        return this.mixinDictionary.getAllKeys();
+    };
+    MixinCatalog.prototype.hasMixin = function (mixinName) {
+        return this.mixinDictionary.containsKey(mixinName);
+    };
+    return MixinCatalog;
+}());
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = MixinCatalog;
+;
+
+},{"./dictionary":2}]},{},[3]);

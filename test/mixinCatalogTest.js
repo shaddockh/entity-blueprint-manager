@@ -5,7 +5,7 @@
 /* global: describe, it, suite, test, setup */
 
 var assert = require('chai').assert;
-var MixinCatalog = require('lib/mixinCatalog');
+var MixinCatalog = require('../lib/mixinCatalog').default;
 var mixins = new MixinCatalog();
 
 /*
