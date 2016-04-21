@@ -69,6 +69,8 @@ import MixinCatalog from "entity-blueprint-manager/mixinCatalog";
     * to build: ```npm run build```
     * to test: ```npm test```
 
+* a ```browserified``` bundle is now located in ```./dist/entity-blueprint-manager.js```
+
 2014-10-20
 ---
 * Added hasBlueprint(name) to blueprintCatalog

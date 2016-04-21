@@ -372,7 +372,7 @@ var Dictionary = (function () {
      */
     Dictionary.prototype.addItems = function (block) {
         for (var itemName in block) {
-            this.add(itemName, block);
+            this.add(itemName, block[itemName]);
         }
     };
     ;

@@ -30,11 +30,11 @@ export default class MixinCatalog {
      * @param name name of the mixin to retrieve
      * @returns Object mixin object
      */
-    getMixin(name: any): any;
+    getMixin(name: any): Object;
     /**
      * will return an array of mixin names
      * @returns {Array}
      */
-    getAllMixinNames(): any[];
+    getAllMixinNames(): string[];
     hasMixin(mixinName: any): boolean;
 }

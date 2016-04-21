@@ -2,6 +2,10 @@ export interface BlueprintCatalogOptions {
     ignoreCase: boolean;
     requireInherits: boolean;
 }
+export interface Blueprint {
+    inherits?: string;
+    name?: string;
+}
 export default class BlueprintCatalog {
     constructor(opts?: BlueprintCatalogOptions);
     private blueprintDictionary;
@@ -26,7 +30,7 @@ export default class BlueprintCatalog {
      * @param {string} [blueprintName]
      * @param {function} [progressCallback] Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
      */
-    loadSingleBlueprint(blueprint: any, blueprintName: any, progressCallback: any): void;
+    loadSingleBlueprint(blueprint: Blueprint, blueprintName: string, progressCallback: (blueprintName: string, error: boolean, message: string, blueprint: Blueprint) => void): void;
     /**
      * loads a block of blueprints into the dictionary.  They need to be in the format
      * {
@@ -40,7 +44,7 @@ export default class BlueprintCatalog {
      * @param {object} block a block of blueprints to load with keys as the name of each blueprint
      * @param {function} [progressCallback] Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
      */
-    loadBlueprints(block: any, progressCallback: any): void;
+    loadBlueprints(block: Object, progressCallback: (blueprintName: string, error: boolean, message: string, blueprint: Blueprint) => void): void;
     /**
      * Will extend either a blueprint of a sub component of a blueprint, returning a new blueprint containing the combination.
      * The original blueprint will not be modified unless inPlaceExtend is set.
@@ -51,7 +55,7 @@ export default class BlueprintCatalog {
      * @param {bool} [inPlaceExtend] if true, will modify the orig blueprint.  Defaults to false
      * @return {Object} New object that contains the merged values
      */
-    extendBlueprint(orig: any, extendwith: any, inPlaceExtend?: any): any;
+    extendBlueprint(orig: Blueprint, extendwith: Blueprint, inPlaceExtend?: boolean): Blueprint;
     /**
      * will return a blueprint hydrating it with values from it's lineage, optionally extending it with
      * the blueprint provided with 'extendwith'
@@ -61,7 +65,7 @@ export default class BlueprintCatalog {
      * @param {object} [extendWith] Optionally extend the returned blueprint with this blueprint
      * @return {object} hydrated blueprint
      */
-    getBlueprint(name: any, extendWith?: any): any;
+    getBlueprint(name: string, extendWith?: Blueprint): Blueprint;
     /**
      * returns the original (un-hydrated) version of the blueprint
      *
@@ -69,14 +73,14 @@ export default class BlueprintCatalog {
      * @param name Name of the blueprint to return.  Must already have been loaded into the library
      * @return {object} un-hydrated blueprint
      */
-    getOriginalBlueprint(name: any): any;
+    getOriginalBlueprint(name: string): Blueprint;
     /**
      * returns an array of all blueprint names in the dictionary
      *
      * @method getAllBlueprintNames
      * @return {Array} array of all blueprint names
      */
-    getAllBlueprintNames(): any[];
+    getAllBlueprintNames(): string[];
     /**
      * Gets a fully fleshed out blueprint from an instance structure.  The instance will not be cached
      * in the blueprint database
@@ -85,7 +89,7 @@ export default class BlueprintCatalog {
      * @param {object} instance
      * @return {object}
      */
-    getBlueprintFromInstance(instance: any): any;
+    getBlueprintFromInstance(instance: Blueprint): Blueprint;
     /**
      * returns all blueprints that inherit from the provided base blueprint.  If recurse is true
      * then it will walk down the entire tree, otherwise it will only return direct descendants
@@ -95,7 +99,7 @@ export default class BlueprintCatalog {
      * @param {boolean} [recurse]
      * @return {Array} a list of all blueprints that descend from baseBlueprintName
      */
-    getBlueprintsDescendingFrom(baseBlueprintName: any, recurse: any): any[];
+    getBlueprintsDescendingFrom(baseBlueprintName: string, recurse: boolean): Blueprint[];
     /**
      * will run through and hydrate all of the blueprints.  This will detect if there are any invalid ones
      * and also speed up queries
@@ -112,11 +116,11 @@ export default class BlueprintCatalog {
      * @param {int} limit if provided, then limit the results to this amount
      * @return {Array} matches
      */
-    find(filt: any, limit: any): any[];
+    find(filt: (item) => boolean, limit?: number): Blueprint[];
     /**
      * @method hasBlueprint
      * @param {string} blueprintName Name of blueprint to check fo
      * @return {bool} true if the blueprint exists in the library
      */
-    hasBlueprint(blueprintName: any): boolean;
+    hasBlueprint(blueprintName: string): boolean;
 }

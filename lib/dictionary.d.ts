@@ -5,7 +5,7 @@
 /**
  * Dictionary class.  Allows for creating a case-insensitive dictionary
  */
-export default class Dictionary {
+export default class Dictionary<T> {
     private _catalog;
     private _keys;
     private _ignoreCase;
@@ -23,7 +23,7 @@ export default class Dictionary {
      * @param key
      * @returns {boolean|*}
      */
-    containsKey(key: any): boolean;
+    containsKey(key: string): boolean;
     /**
      * loads a single item into the dictionary with the provided key name.  Will throw an error if there is
      * already an item with this key in the catalog.
@@ -31,7 +31,7 @@ export default class Dictionary {
      * @param key
      * @param item
      */
-    add(key: any, item: any): void;
+    add(key: string, item: T): void;
     /**
      * loads a block of items into the dictionary.  They need to be in the format
      * {
@@ -41,19 +41,19 @@ export default class Dictionary {
      *
      * @param block
      */
-    addItems(block: any): void;
+    addItems(block: Object): void;
     /**
      * returns an item specified by the key provided in the catalog
      * @param key
      * @returns {*}
      */
-    get(key: any): any;
-    getItem(key: any): any;
+    get(key: any): T;
+    getItem(key: any): T;
     /**
      * returns an array of all key names in the catalog
      * @returns {Array}
      */
-    getAllKeys(): any[];
+    getAllKeys(): string[];
     /**
      * iterates over the items in the catalog and executes callback for each element
      * @param callback format: function(item, key)
@@ -68,5 +68,5 @@ export default class Dictionary {
      * @param {int} limit
      * @return {Array} matches
      */
-    find(filt: any, limit?: any): any[];
+    find(filt: (item) => boolean, limit?: any): T[];
 }

@@ -6,7 +6,7 @@ import Dictionary from "./dictionary";
  */
 export default class MixinCatalog {
 
-  private mixinDictionary = new Dictionary({
+  private mixinDictionary = new Dictionary<Object>({
     ignoreCase: true
   });
 
