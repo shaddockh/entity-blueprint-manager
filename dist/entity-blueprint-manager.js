@@ -445,12 +445,12 @@ exports.default = Dictionary;
 
 },{}],3:[function(require,module,exports){
 "use strict";
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(require("./blueprintCatalog"));
-__export(require("./dictionary"));
-__export(require("./mixinCatalog"));
+var blueprintCatalog_1 = require("./blueprintCatalog");
+exports.BlueprintCatalog = blueprintCatalog_1.default;
+var dictionary_1 = require("./dictionary");
+exports.Dictionary = dictionary_1.default;
+var mixinCatalog_1 = require("./mixinCatalog");
+exports.MixinCatalog = mixinCatalog_1.default;
 
 },{"./blueprintCatalog":1,"./dictionary":2,"./mixinCatalog":4}],4:[function(require,module,exports){
 "use strict";
