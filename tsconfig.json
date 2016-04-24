@@ -19,7 +19,7 @@
   "filesGlob": [
     "./ts/**/*.ts",
     "!./node_modules/**/*.ts",
-    "./typings/**/*.ts"
+    "!./typings/**/*.ts"
   ],
   "compileOnSave": true,
   "buildOnSave": false,
@@ -30,7 +30,6 @@
     "./ts/blueprintCatalog.ts",
     "./ts/dictionary.ts",
     "./ts/index.ts",
-    "./ts/mixinCatalog.ts",
-    "./typings/entity-blueprint-manager.d.ts"
+    "./ts/mixinCatalog.ts"
   ]
 }
