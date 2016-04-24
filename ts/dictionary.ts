@@ -2,42 +2,46 @@
  *
  * Created by shaddockh on 9/28/14.
  */
-"use strict";
+
 /**
  * Dictionary class.  Allows for creating a case-insensitive dictionary
  */
-var Dictionary = (function () {
-    function Dictionary(opts) {
-        if (opts === void 0) { opts = {
-            ignoreCase: true
-        }; }
-        this._catalog = {};
-        this._keys = [];
-        this._ignoreCase = true;
+export default class Dictionary<T> {
+    private _catalog = {};
+    private _keys: string[] = [];
+    private _ignoreCase = true;
+
+    constructor(opts = {
+        ignoreCase: true
+    }) {
         this._ignoreCase = opts.ignoreCase;
     }
+
     /**
      * Clears the catalog
      *
      * @method clear
      */
-    Dictionary.prototype.clear = function () {
+    clear() {
         this._catalog = {};
+
         // Note: according to JSPerf this is the fastest way to clear an array
-        var k = this._keys;
+        let k = this._keys;
         while (k.length > 0) {
             k.pop();
         }
-    };
+    }
+
     /**
      * Return true if the dictionary contains the provided key
      * @param key
      * @returns {boolean|*}
      */
-    Dictionary.prototype.containsKey = function (key) {
+    containsKey(key: string): boolean {
         key = this._ignoreCase ? key.toUpperCase() : key;
         return this._catalog.hasOwnProperty(key);
-    };
+    }
+
     /**
      * loads a single item into the dictionary with the provided key name.  Will throw an error if there is
      * already an item with this key in the catalog.
@@ -45,16 +49,17 @@ var Dictionary = (function () {
      * @param key
      * @param item
      */
-    Dictionary.prototype.add = function (key, item) {
-        var newkey = this._ignoreCase ? key.toUpperCase() : key;
+    add(key: string, item: T) {
+        let newkey = this._ignoreCase ? key.toUpperCase() : key;
+
         if (typeof this._catalog[newkey] !== "undefined") {
             throw new Error("Duplicate item detected: " + key);
-        }
-        else {
+        } else {
             this._catalog[newkey] = item;
             this._keys.push(key);
         }
-    };
+    }
+
     /**
      * loads a block of items into the dictionary.  They need to be in the format
      * {
@@ -64,49 +69,49 @@ var Dictionary = (function () {
      *
      * @param block
      */
-    Dictionary.prototype.addItems = function (block) {
-        for (var itemName in block) {
+    addItems(block: Object) {
+        for (let itemName in block) {
             this.add(itemName, block[itemName]);
         }
     };
-    ;
+
     /**
      * returns an item specified by the key provided in the catalog
      * @param key
      * @returns {*}
      */
-    Dictionary.prototype.get = function (key) {
-        var newkey = this._ignoreCase ? key.toUpperCase() : key;
+    get(key): T {
+        let newkey = this._ignoreCase ? key.toUpperCase() : key;
         if (!this._catalog.hasOwnProperty(newkey)) {
             throw new Error("Item does not exist in catalog: " + key);
         }
         return this._catalog[newkey];
     };
-    ;
-    Dictionary.prototype.getItem = function (key) {
+
+    getItem(key): T {
         console.error("Deprecated: Dictionary.getItem");
         return this.get(key);
     };
-    ;
+
     /**
      * returns an array of all key names in the catalog
      * @returns {Array}
      */
-    Dictionary.prototype.getAllKeys = function () {
+    getAllKeys(): string[] {
         return this._keys.slice();
     };
-    ;
+
     /**
      * iterates over the items in the catalog and executes callback for each element
      * @param callback format: function(item, key)
      */
-    Dictionary.prototype.forEach = function (callback) {
-        var dict = this;
-        this._keys.forEach(function (key) {
+    forEach(callback) {
+        let dict = this;
+        this._keys.forEach(function(key) {
             callback(dict.get(key), key);
         });
     };
-    ;
+
     /**
      * find an item by providing a filter that will be called for each item.
      * if limit is provided, it will stop iterating once the limit of found items is met.
@@ -116,23 +121,20 @@ var Dictionary = (function () {
      * @param {int} limit
      * @return {Array} matches
      */
-    Dictionary.prototype.find = function (filt, limit) {
-        var results = [];
+    find(filt: (item) => boolean, limit?): T[] {
+        let results = [];
         if (typeof (filt) !== "function") {
             throw new Error(".find must be provided a function to use for filtering");
         }
         limit = limit || -1;
-        var item;
-        for (var key in this._catalog) {
+        let item;
+        for (let key in this._catalog) {
             item = this._catalog[key];
+
             if (filt(item)) {
                 results.push(item);
             }
         }
         return results;
     };
-    ;
-    return Dictionary;
-}());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Dictionary;
+}

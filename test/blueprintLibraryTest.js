@@ -5,7 +5,7 @@
 /* global: describe, it, suite, test, setup */
 
 var assert = require('chai').assert;
-var BlueprintCatalog = require('lib/blueprintCatalog');
+var BlueprintCatalog = require('../lib').BlueprintCatalog;
 var blueprintLibrary = new BlueprintCatalog();
 
 /*
@@ -84,7 +84,7 @@ suite("module: blueprintLibrary", function () {
       assert.
       throw (function () {
         blueprintLibrary.loadSingleBlueprint(bp);
-      }, 'Blueprint does not provide an "inherits" property');
+      }, "Blueprint does not provide an 'inherits' property");
     });
     test('can load a aingle blueprint', function () {
       var bp = {
@@ -214,7 +214,7 @@ suite("module: blueprintLibrary", function () {
       var testFunc = function () {
         blueprintLibrary.getBlueprint('testBp');
       };
-      assert.throws(testFunc, /Blueprint: "testBp" inherits from undefined blueprint: "not-added"/);
+      assert.throws(testFunc, /Blueprint: 'testBp' inherits from undefined blueprint: 'not-added'/);
     });
 
     test('should throw an error if trying to get a blueprint that does not exist', function () {
@@ -295,7 +295,7 @@ suite("module: blueprintLibrary", function () {
     var testFunc = function () {
       blueprintLibrary.hydrateAllBlueprints();
     };
-    assert.throws(testFunc, /Blueprint: "errorblueprint" inherits from undefined blueprint: "unknown"/);
+    assert.throws(testFunc, /Blueprint: 'errorblueprint' inherits from undefined blueprint: 'unknown'/);
   });
 
   /*
