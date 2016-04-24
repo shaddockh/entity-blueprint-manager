@@ -54,17 +54,18 @@ CHANGES
 * Converted to TypeScript.
     * Breaking Changes: you now need to:
 ``` javascript
-var BlueprintCatalog = require("entity-blueprint-manager/blueprintCatalog").default;
-var Dictionary = require("entity-blueprint-manager/dictionary").default;
-var MixinCatalog = require("entity-blueprint-manager/mixinCatalog").default;
+var BlueprintCatalog = require("entity-blueprint-manager").BluerpintCatalog;
+var Dictionary = require("entity-blueprint-manager").Dictionary;
+var MixinCatalog = require("entity-blueprint-manager").MixinCatalog;
 ```
 
 or
 ```TypeScript
-import BlueprintCatalog from "entity-blueprint-manager/blueprintCatalog";
-import Dictionary from "entity-blueprint-manager/dictionary";
-import MixinCatalog from "entity-blueprint-manager/mixinCatalog";
+import BlueprintCatalog from "entity-blueprint-manager";
+import Dictionary from "entity-blueprint-manager";
+import MixinCatalog from "entity-blueprint-manager";
 ```
+
 * modified the build process
     * to build: ```npm run build```
     * to test: ```npm test```
