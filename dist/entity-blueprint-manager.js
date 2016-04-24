@@ -300,8 +300,7 @@ var BlueprintCatalog = (function () {
     };
     return BlueprintCatalog;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = BlueprintCatalog;
+exports.BlueprintCatalog = BlueprintCatalog;
 
 },{"./dictionary":2}],2:[function(require,module,exports){
 /**
@@ -445,12 +444,13 @@ exports.default = Dictionary;
 
 },{}],3:[function(require,module,exports){
 "use strict";
-var blueprintCatalog_1 = require("./blueprintCatalog");
-exports.BlueprintCatalog = blueprintCatalog_1.default;
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 var dictionary_1 = require("./dictionary");
 exports.Dictionary = dictionary_1.default;
-var mixinCatalog_1 = require("./mixinCatalog");
-exports.MixinCatalog = mixinCatalog_1.default;
+__export(require("./blueprintCatalog"));
+__export(require("./mixinCatalog"));
 
 },{"./blueprintCatalog":1,"./dictionary":2,"./mixinCatalog":4}],4:[function(require,module,exports){
 "use strict";
@@ -525,8 +525,7 @@ var MixinCatalog = (function () {
     };
     return MixinCatalog;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = MixinCatalog;
+exports.MixinCatalog = MixinCatalog;
 ;
 
 },{"./dictionary":2}]},{},[3]);

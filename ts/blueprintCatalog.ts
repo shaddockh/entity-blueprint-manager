@@ -55,7 +55,8 @@ export interface Blueprint {
     inherits?: string;
     name?: string;
 }
-export default class BlueprintCatalog {
+
+export class BlueprintCatalog {
 
     constructor(opts: BlueprintCatalogOptions = {
         ignoreCase: true,

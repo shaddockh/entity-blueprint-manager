@@ -18,7 +18,8 @@
   },
   "filesGlob": [
     "./ts/**/*.ts",
-    "!./node_modules/**/*.ts"
+    "!./node_modules/**/*.ts",
+    "./typings/**/*.ts"
   ],
   "compileOnSave": true,
   "buildOnSave": false,

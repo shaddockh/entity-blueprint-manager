@@ -1,7 +1,7 @@
 /**
  * mixin catalog
  */
-export default class MixinCatalog {
+export declare class MixinCatalog {
     private mixinDictionary;
     /**
      * Clears the mixin and resets everything

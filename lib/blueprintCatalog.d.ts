@@ -6,7 +6,7 @@ export interface Blueprint {
     inherits?: string;
     name?: string;
 }
-export default class BlueprintCatalog {
+export declare class BlueprintCatalog {
     constructor(opts?: BlueprintCatalogOptions);
     private blueprintDictionary;
     private hydratedBlueprints;

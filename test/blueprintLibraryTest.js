@@ -5,7 +5,7 @@
 /* global: describe, it, suite, test, setup */
 
 var assert = require('chai').assert;
-var BlueprintCatalog = require('../lib/blueprintCatalog').default;
+var BlueprintCatalog = require('../lib').BlueprintCatalog;
 var blueprintLibrary = new BlueprintCatalog();
 
 /*
