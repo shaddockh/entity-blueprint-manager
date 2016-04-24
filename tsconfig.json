@@ -30,6 +30,7 @@
     "./ts/blueprintCatalog.ts",
     "./ts/dictionary.ts",
     "./ts/index.ts",
-    "./ts/mixinCatalog.ts"
+    "./ts/mixinCatalog.ts",
+    "./typings/entity-blueprint-manager.d.ts"
   ]
 }
