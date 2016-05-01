@@ -76,8 +76,8 @@ declare module 'entity-blueprint-manager' {
 
 }
 declare module 'entity-blueprint-manager' {
-	import { DictionaryOptions } from 'dictionary';
-	export interface BlueprintCatalogOptions extends DictionaryOptions {
+	export interface BlueprintCatalogOptions {
+	    ignoreCase: boolean;
 	    requireInherits: boolean;
 	}
 	export interface Blueprint {

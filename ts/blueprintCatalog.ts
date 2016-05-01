@@ -1,4 +1,4 @@
-import {default as Dictionary, DictionaryOptions} from "./dictionary";
+import Dictionary from "./dictionary";
 
 /**
  * Generic blueprint manager.  What this will do is allow you
@@ -47,7 +47,8 @@ import {default as Dictionary, DictionaryOptions} from "./dictionary";
  */
 
 "use strict";
-export interface BlueprintCatalogOptions extends DictionaryOptions {
+export interface BlueprintCatalogOptions {
+    ignoreCase: boolean;
     requireInherits: boolean;
 }
 
