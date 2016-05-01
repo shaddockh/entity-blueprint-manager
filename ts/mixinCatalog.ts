@@ -1,12 +1,17 @@
 import Dictionary from "./dictionary";
 
 "use strict";
+
+export interface Mixin {
+    name: string;
+}
+
 /**
  * mixin catalog
  */
 export class MixinCatalog {
 
-  private mixinDictionary = new Dictionary<Object>({
+  private mixinDictionary = new Dictionary<Mixin>({
     ignoreCase: true
   });
 
@@ -24,7 +29,7 @@ export class MixinCatalog {
    * progressCallback can optionally be provided as:
    *   function(mixinName, true|false (loaded), msg)
    */
-  loadSingleMixin(mixin, progressCallback) {
+  loadSingleMixin(mixin: Mixin, progressCallback: (mixinName: string, loaded: boolean, msg: string) => void) {
     try {
       this.mixinDictionary.add(mixin.name, mixin);
       if (progressCallback) {
@@ -46,7 +51,7 @@ export class MixinCatalog {
    * @param block block of mixins
    * @param progressCallback function to be provided as callback with signature function(mixinName, bool loaded, message)
    */
-  loadMixins(block, progressCallback) {
+  loadMixins(block: Object, progressCallback: (mixinName: string, loaded: boolean, message: string) => void) {
     for (let mixinName in block) {
       this.loadSingleMixin(block[mixinName], progressCallback);
     }
@@ -57,7 +62,7 @@ export class MixinCatalog {
    * @param name name of the mixin to retrieve
    * @returns Object mixin object
    */
-  getMixin(name) {
+  getMixin(name: string): Mixin {
     return this.mixinDictionary.get(name);
   }
 
@@ -65,11 +70,11 @@ export class MixinCatalog {
    * will return an array of mixin names
    * @returns {Array}
    */
-  getAllMixinNames() {
+  getAllMixinNames(): string[] {
     return this.mixinDictionary.getAllKeys();
   }
 
-  hasMixin(mixinName) {
+  hasMixin(mixinName: string): boolean {
     return this.mixinDictionary.containsKey(mixinName);
   }
 

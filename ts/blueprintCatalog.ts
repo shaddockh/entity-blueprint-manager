@@ -1,4 +1,5 @@
-import Dictionary from "./dictionary";
+import {default as Dictionary, DictionaryOptions} from "./dictionary";
+
 /**
  * Generic blueprint manager.  What this will do is allow you
  * to define a hierarchy of templates that descend from each other.
@@ -46,14 +47,14 @@ import Dictionary from "./dictionary";
  */
 
 "use strict";
-export interface BlueprintCatalogOptions {
-    ignoreCase: boolean;
+export interface BlueprintCatalogOptions extends DictionaryOptions {
     requireInherits: boolean;
 }
 
 export interface Blueprint {
     inherits?: string;
     name?: string;
+    [key:string]:Object;
 }
 
 export class BlueprintCatalog {
@@ -74,7 +75,6 @@ export class BlueprintCatalog {
 
     private blueprintDictionary: Dictionary<Blueprint> = null;
     private hydratedBlueprints: Dictionary<Blueprint> = null;
-    private bpList = [];
     private debugMode = false;
     private needsReindexing = false;
     private options: BlueprintCatalogOptions = null;
@@ -87,7 +87,6 @@ export class BlueprintCatalog {
     clear() {
         this.blueprintDictionary.clear();
         this.hydratedBlueprints.clear();
-        this.bpList = [];
         this.needsReindexing = false;
     }
 
@@ -152,22 +151,23 @@ export class BlueprintCatalog {
      * @param {bool} [inPlaceExtend] if true, will modify the orig blueprint.  Defaults to false
      * @return {Object} New object that contains the merged values
      */
-    extendBlueprint(orig: Blueprint, extendwith?: Blueprint, inPlaceExtend?: boolean) {
+    extendBlueprint(orig: Object, extendwith: Object, inPlaceExtend?: boolean): Blueprint;
+    extendBlueprint(orig: Blueprint, extendwith: Blueprint, inPlaceExtend?: boolean): Blueprint;
+    extendBlueprint(orig: any, extendwith: Blueprint, inPlaceExtend?: boolean): Blueprint {
         let result = inPlaceExtend ? orig : {};
-        let i;
 
-        for (i in orig) {
+        for (let i in orig) {
             if (orig.hasOwnProperty(i)) {
                 result[i] = orig[i];
             }
         }
-        for (i in extendwith) {
+        for (let i in extendwith) {
             if (extendwith.hasOwnProperty(i)) {
 
                 if (typeof extendwith[i] === "object") {
                     if (extendwith[i] === null) {
                         result[i] = null;
-                    } else if (extendwith[i].length) {
+                    } else if ((<any[]>extendwith[i]).length) {
                         // handle array types
                         result[i] = extendwith[i];
                     } else {
@@ -191,7 +191,7 @@ export class BlueprintCatalog {
      * @return {object} hydrated blueprint
      */
     getBlueprint(name: string, extendWith?: Blueprint): Blueprint {
-        let result;
+        let result: Blueprint;
 
         if (!this.hydratedBlueprints.containsKey(name)) {
             if (this.debugMode) {
@@ -306,7 +306,7 @@ export class BlueprintCatalog {
      * @param {int} limit if provided, then limit the results to this amount
      * @return {Array} matches
      */
-    find(filt: (item) => boolean, limit?: number) {
+    find(filt: (item: Blueprint) => boolean, limit?: number): Blueprint[] {
         if (this.needsReindexing) {
             this.hydrateAllBlueprints();
         }

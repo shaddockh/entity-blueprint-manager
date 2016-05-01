@@ -8,13 +8,14 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declaration": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
     "noImplicitUseStrict": false,
     "removeComments": false,
     "noLib": false,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
-    "outDir": "./lib/"
+    "outDir": "./lib/",
+    "stripInternal": true
   },
   "filesGlob": [
     "./ts/**/*.ts",
