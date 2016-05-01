@@ -3,15 +3,19 @@
  * Created by shaddockh on 9/28/14.
  */
 
+export interface DictionaryOptions {
+    ignoreCase: boolean;
+}
+
 /**
  * Dictionary class.  Allows for creating a case-insensitive dictionary
  */
 export default class Dictionary<T> {
-    private _catalog = {};
+    private _catalog: { [key: string]: T } = {};
     private _keys: string[] = [];
     private _ignoreCase = true;
 
-    constructor(opts = {
+    constructor(opts: DictionaryOptions = {
         ignoreCase: true
     }) {
         this._ignoreCase = opts.ignoreCase;
@@ -77,10 +81,10 @@ export default class Dictionary<T> {
 
     /**
      * returns an item specified by the key provided in the catalog
-     * @param key
+     * @param {string} key
      * @returns {*}
      */
-    get(key): T {
+    get(key: string): T {
         let newkey = this._ignoreCase ? key.toUpperCase() : key;
         if (!this._catalog.hasOwnProperty(newkey)) {
             throw new Error("Item does not exist in catalog: " + key);
@@ -88,7 +92,8 @@ export default class Dictionary<T> {
         return this._catalog[newkey];
     };
 
-    getItem(key): T {
+    /** @deprecated */
+    getItem(key: string): T {
         console.error("Deprecated: Dictionary.getItem");
         return this.get(key);
     };
@@ -105,7 +110,7 @@ export default class Dictionary<T> {
      * iterates over the items in the catalog and executes callback for each element
      * @param callback format: function(item, key)
      */
-    forEach(callback) {
+    forEach(callback: (item: T, key: string) => void) {
         let dict = this;
         this._keys.forEach(function(key) {
             callback(dict.get(key), key);
@@ -118,16 +123,16 @@ export default class Dictionary<T> {
      *
      * @method find
      * @param {function} filt
-     * @param {int} limit
+     * @param {int} limit number of elements to limit result to
      * @return {Array} matches
      */
-    find(filt: (item) => boolean, limit?): T[] {
-        let results = [];
+    find(filt: (item: T) => boolean, limit?: number): T[] {
+        let results: T[] = [];
         if (typeof (filt) !== "function") {
             throw new Error(".find must be provided a function to use for filtering");
         }
         limit = limit || -1;
-        let item;
+        let item: T;
         for (let key in this._catalog) {
             item = this._catalog[key];
 

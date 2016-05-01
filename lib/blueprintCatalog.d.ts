@@ -1,16 +1,16 @@
-export interface BlueprintCatalogOptions {
-    ignoreCase: boolean;
+import { DictionaryOptions } from "./dictionary";
+export interface BlueprintCatalogOptions extends DictionaryOptions {
     requireInherits: boolean;
 }
 export interface Blueprint {
     inherits?: string;
     name?: string;
+    [key: string]: Object;
 }
 export declare class BlueprintCatalog {
     constructor(opts?: BlueprintCatalogOptions);
     private blueprintDictionary;
     private hydratedBlueprints;
-    private bpList;
     private debugMode;
     private needsReindexing;
     private options;
@@ -55,6 +55,7 @@ export declare class BlueprintCatalog {
      * @param {bool} [inPlaceExtend] if true, will modify the orig blueprint.  Defaults to false
      * @return {Object} New object that contains the merged values
      */
+    extendBlueprint(orig: Object, extendwith: Object, inPlaceExtend?: boolean): Blueprint;
     extendBlueprint(orig: Blueprint, extendwith: Blueprint, inPlaceExtend?: boolean): Blueprint;
     /**
      * will return a blueprint hydrating it with values from it's lineage, optionally extending it with
@@ -116,7 +117,7 @@ export declare class BlueprintCatalog {
      * @param {int} limit if provided, then limit the results to this amount
      * @return {Array} matches
      */
-    find(filt: (item) => boolean, limit?: number): Blueprint[];
+    find(filt: (item: Blueprint) => boolean, limit?: number): Blueprint[];
     /**
      * @method hasBlueprint
      * @param {string} blueprintName Name of blueprint to check fo

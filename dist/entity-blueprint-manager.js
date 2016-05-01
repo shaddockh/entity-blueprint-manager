@@ -55,7 +55,6 @@ var BlueprintCatalog = (function () {
         }; }
         this.blueprintDictionary = null;
         this.hydratedBlueprints = null;
-        this.bpList = [];
         this.debugMode = false;
         this.needsReindexing = false;
         this.options = null;
@@ -75,7 +74,6 @@ var BlueprintCatalog = (function () {
     BlueprintCatalog.prototype.clear = function () {
         this.blueprintDictionary.clear();
         this.hydratedBlueprints.clear();
-        this.bpList = [];
         this.needsReindexing = false;
     };
     /**
@@ -126,25 +124,14 @@ var BlueprintCatalog = (function () {
             }
         }
     };
-    /**
-     * Will extend either a blueprint of a sub component of a blueprint, returning a new blueprint containing the combination.
-     * The original blueprint will not be modified unless inPlaceExtend is set.
-     *
-     * @method extendBlueprint
-     * @param orig original blueprint to extend
-     * @param extendwith object to extend original blueprint with
-     * @param {bool} [inPlaceExtend] if true, will modify the orig blueprint.  Defaults to false
-     * @return {Object} New object that contains the merged values
-     */
     BlueprintCatalog.prototype.extendBlueprint = function (orig, extendwith, inPlaceExtend) {
         var result = inPlaceExtend ? orig : {};
-        var i;
-        for (i in orig) {
+        for (var i in orig) {
             if (orig.hasOwnProperty(i)) {
                 result[i] = orig[i];
             }
         }
-        for (i in extendwith) {
+        for (var i in extendwith) {
             if (extendwith.hasOwnProperty(i)) {
                 if (typeof extendwith[i] === "object") {
                     if (extendwith[i] === null) {
@@ -377,7 +364,7 @@ var Dictionary = (function () {
     ;
     /**
      * returns an item specified by the key provided in the catalog
-     * @param key
+     * @param {string} key
      * @returns {*}
      */
     Dictionary.prototype.get = function (key) {
@@ -388,6 +375,7 @@ var Dictionary = (function () {
         return this._catalog[newkey];
     };
     ;
+    /** @deprecated */
     Dictionary.prototype.getItem = function (key) {
         console.error("Deprecated: Dictionary.getItem");
         return this.get(key);
@@ -418,7 +406,7 @@ var Dictionary = (function () {
      *
      * @method find
      * @param {function} filt
-     * @param {int} limit
+     * @param {int} limit number of elements to limit result to
      * @return {Array} matches
      */
     Dictionary.prototype.find = function (filt, limit) {
