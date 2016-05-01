@@ -133,7 +133,7 @@ export class BlueprintCatalog {
      * @param {object} block a block of blueprints to load with keys as the name of each blueprint
      * @param {function} [progressCallback] Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
      */
-    loadBlueprints(block: Object, progressCallback: (blueprintName: string, error: boolean, message: string, blueprint: Blueprint) => void) {
+    loadBlueprints(block: Object, progressCallback?: (blueprintName: string, error: boolean, message: string, blueprint: Blueprint) => void) {
         for (let blueprintName in block) {
             if (block.hasOwnProperty(blueprintName)) {
                 this.loadSingleBlueprint(block[blueprintName], blueprintName, progressCallback);
