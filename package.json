@@ -17,9 +17,10 @@
     "test": "mocha --ui tdd test/*.js",
     "lint": "tslint ./ts/*.ts",
     "npm-lint": "ts-npm-lint",
-    "prebuild": "npm run lint && tsc && npm run npm-lint && npm run decl",
+    "prebuild": "npm run lint && tsc && npm run npm-lint && npm run decl && npm run docs",
     "build": "browserify ./lib/index.js > ./dist/entity-blueprint-manager.js",
-    "decl": "dts-generator --name entity-blueprint-manager --project ./ --exclude node_modules/**/*.d.ts --exclude ts/index.ts --exclude typings/ambient/entity-blueprint-manager.d.ts --out typings/ambient/entity-blueprint-manager.d.ts"
+    "decl": "dts-generator --name entity-blueprint-manager --project ./ --exclude node_modules/**/*.d.ts --exclude ts/index.ts --exclude typings/ambient/entity-blueprint-manager.d.ts --out typings/ambient/entity-blueprint-manager.d.ts",
+    "docs": "typedoc --out docs ts/*.ts --module commonjs --mode file --theme minimal --readme none --name 'Entity Blueprint Manager'"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "mocha": "^2.4.5",
     "ts-npm-lint": "^0.1.0",
     "tslint": "^3.8.0",
+    "typedoc": "^0.3.12",
     "typescript": "^1.8.10"
   }
 }

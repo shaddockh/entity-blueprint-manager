@@ -59,10 +59,10 @@ var BlueprintCatalog = (function () {
         this.needsReindexing = false;
         this.options = null;
         this.options = opts;
-        this.blueprintDictionary = new dictionary_1.default({
+        this.blueprintDictionary = new dictionary_1.Dictionary({
             ignoreCase: opts.ignoreCase
         });
-        this.hydratedBlueprints = new dictionary_1.default({
+        this.hydratedBlueprints = new dictionary_1.Dictionary({
             ignoreCase: opts.ignoreCase
         });
     }
@@ -427,16 +427,14 @@ var Dictionary = (function () {
     ;
     return Dictionary;
 }());
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Dictionary;
+exports.Dictionary = Dictionary;
 
 },{}],3:[function(require,module,exports){
 "use strict";
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
-var dictionary_1 = require("./dictionary");
-exports.Dictionary = dictionary_1.default;
+__export(require("./dictionary"));
 __export(require("./blueprintCatalog"));
 __export(require("./mixinCatalog"));
 
@@ -449,7 +447,7 @@ var dictionary_1 = require("./dictionary");
  */
 var MixinCatalog = (function () {
     function MixinCatalog() {
-        this.mixinDictionary = new dictionary_1.default({
+        this.mixinDictionary = new dictionary_1.Dictionary({
             ignoreCase: true
         });
     }
