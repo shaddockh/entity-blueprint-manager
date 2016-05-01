@@ -9,7 +9,7 @@ declare module 'entity-blueprint-manager' {
 	/**
 	 * Dictionary class.  Allows for creating a case-insensitive dictionary
 	 */
-	export default class Dictionary<T> {
+	export class Dictionary<T> {
 	    private _catalog;
 	    private _keys;
 	    private _ignoreCase;

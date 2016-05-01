@@ -47,6 +47,9 @@ returns
   }
 }
 ```
+### API Documentation
+API Documentation can be found at
+[Entity Blueprint Manager API]( http://htmlpreview.github.com/?https://github.com/shaddockh/entity-blueprint-manager.js/blob/master/docs/index.html)
 
 CHANGES
 ====

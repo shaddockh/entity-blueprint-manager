@@ -10,7 +10,7 @@ export interface DictionaryOptions {
 /**
  * Dictionary class.  Allows for creating a case-insensitive dictionary
  */
-export default class Dictionary<T> {
+export class Dictionary<T> {
     private _catalog: { [key: string]: T } = {};
     private _keys: string[] = [];
     private _ignoreCase = true;
