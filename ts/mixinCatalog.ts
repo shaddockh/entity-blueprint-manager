@@ -17,8 +17,6 @@ export class MixinCatalog {
 
   /**
    * Clears the mixin and resets everything
-   *
-   * @method clear
    */
   clear() {
     this.mixinDictionary.clear();
@@ -26,8 +24,6 @@ export class MixinCatalog {
 
   /**
    * loads a single mixin into the dictionary.
-   * progressCallback can optionally be provided as:
-   *   function(mixinName, true|false (loaded), msg)
    */
   loadSingleMixin(mixin: Mixin, progressCallback: (mixinName: string, loaded: boolean, msg: string) => void) {
     try {
@@ -44,10 +40,12 @@ export class MixinCatalog {
 
   /**
    * loads a block of mixins into the dictionary.  They need to be in the format
+   * ``` json
    * {
    *   mixinName: { mixin details ... }
    *   mixinName: { mixin details ... }
    * }
+   * ```
    * @param block block of mixins
    * @param progressCallback function to be provided as callback with signature function(mixinName, bool loaded, message)
    */
@@ -60,7 +58,7 @@ export class MixinCatalog {
   /**
    * will return a component by name
    * @param name name of the mixin to retrieve
-   * @returns Object mixin object
+   * @returns mixin object
    */
   getMixin(name: string): Mixin {
     return this.mixinDictionary.get(name);
@@ -68,12 +66,14 @@ export class MixinCatalog {
 
   /**
    * will return an array of mixin names
-   * @returns {Array}
    */
   getAllMixinNames(): string[] {
     return this.mixinDictionary.getAllKeys();
   }
 
+  /**
+   * Return true if the mixin provided exists
+   */
   hasMixin(mixinName: string): boolean {
     return this.mixinDictionary.containsKey(mixinName);
   }

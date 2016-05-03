@@ -1121,9 +1121,47 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Blueprint<wbr>Catalog<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L61">blueprintCatalog.ts:61</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L70">blueprintCatalog.ts:70</a></li>
 					</ul>
 				</aside>
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Generic blueprint manager.  What this will do is allow you
+							to define a hierarchy of templates that descend from each other.
+							when creating a blueprint, it will walk up the entire tree of the
+							hierarchy and fill in any blank values that are provided at parent levels
+						and give you a fully hydrated blueprint.</p>
+					</div>
+					<p>ie:</p>
+					<pre><code class="lang-json">blueprints: {
+ parent: {
+     inherits: &#39;_base&#39;
+     ,component1: {
+         val1: &#39;value&#39;
+         ,val2: &#39;valParent&#39;
+     }
+ },
+ child: {
+     inherits: &#39;parent&#39;
+     ,component1: {
+         val3: &#39;val3&#39;
+         ,val2: &#39;valChild&#39;  //will override parent!
+     }
+ }
+
+}
+</code></pre>
+					<p>generateInstanceBlueprint(&#39;child&#39;) will create:</p>
+					<pre><code class="lang-json">{
+  inherits: &#39;child&#39;
+  id: 10293
+  ,component1: {
+     val1: &#39;value&#39;
+     ,val2: &#39;valChilde&#39;
+     ,val3: &#39;val3&#39;
+ }
+</code></pre>
+				</div>
 				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="blueprintcatalog.constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
@@ -1134,7 +1172,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L61">blueprintCatalog.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L70">blueprintCatalog.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1153,7 +1191,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">blueprint<wbr>Dictionary<span class="tsd-signature-symbol">:</span> <a href="index.html#dictionary" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="index.html#blueprint" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L77">blueprintCatalog.ts:77</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L86">blueprintCatalog.ts:86</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1163,7 +1201,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">debug<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L79">blueprintCatalog.ts:79</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L88">blueprintCatalog.ts:88</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1173,7 +1211,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">hydrated<wbr>Blueprints<span class="tsd-signature-symbol">:</span> <a href="index.html#dictionary" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="index.html#blueprint" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L78">blueprintCatalog.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L87">blueprintCatalog.ts:87</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1183,7 +1221,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">needs<wbr>Reindexing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L80">blueprintCatalog.ts:80</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L89">blueprintCatalog.ts:89</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1193,7 +1231,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="index.html#blueprintcatalogoptions" class="tsd-signature-type">BlueprintCatalogOptions</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L81">blueprintCatalog.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L90">blueprintCatalog.ts:90</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1207,18 +1245,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L88">blueprintCatalog.ts:88</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L95">blueprintCatalog.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Clears the blueprints and resets everything</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>clear</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1235,7 +1268,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L155">blueprintCatalog.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L153">blueprintCatalog.ts:153</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1243,11 +1276,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>Will extend either a blueprint of a sub component of a blueprint, returning a new blueprint containing the combination.
 									The original blueprint will not be modified unless inPlaceExtend is set.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>extendBlueprint</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1265,6 +1293,9 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> inPlaceExtend: <span class="tsd-signature-type">boolean</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>if true, will modify the orig blueprint.  Defaults to false</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="index.html#blueprint" class="tsd-signature-type">Blueprint</a></h4>
@@ -1273,7 +1304,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L156">blueprintCatalog.ts:156</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L154">blueprintCatalog.ts:154</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1302,7 +1333,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L310">blueprintCatalog.ts:310</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L295">blueprintCatalog.ts:295</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1310,11 +1341,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>find a blueprint by providing a filter that will be called for each blueprint.
 									if limit is provided, it will stop iterating once the limit of found blueprints is met.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>find</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1364,18 +1390,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L241">blueprintCatalog.ts:241</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L236">blueprintCatalog.ts:236</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns an array of all blueprint names in the dictionary</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>getAllBlueprintNames</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
 							<p>array of all blueprint names</p>
@@ -1392,7 +1413,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L194">blueprintCatalog.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L191">blueprintCatalog.ts:191</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1400,11 +1421,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>will return a blueprint hydrating it with values from it&#39;s lineage, optionally extending it with
 									the blueprint provided with &#39;extendwith&#39;</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>getBlueprint</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1416,6 +1432,9 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> extendWith: <a href="index.html#blueprint" class="tsd-signature-type">Blueprint</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Optionally extend the returned blueprint with this blueprint</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="index.html#blueprint" class="tsd-signature-type">Blueprint</a></h4>
@@ -1433,7 +1452,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L253">blueprintCatalog.ts:253</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L244">blueprintCatalog.ts:244</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1441,11 +1460,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>Gets a fully fleshed out blueprint from an instance structure.  The instance will not be cached
 									in the blueprint database</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>getBlueprintFromInstance</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1467,7 +1481,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L271">blueprintCatalog.ts:271</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L259">blueprintCatalog.ts:259</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1475,11 +1489,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>returns all blueprints that inherit from the provided base blueprint.  If recurse is true
 									then it will walk down the entire tree, otherwise it will only return direct descendants</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>getBlueprintDescendingFrom</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1505,18 +1514,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L231">blueprintCatalog.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L227">blueprintCatalog.ts:227</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>returns the original (un-hydrated) version of the blueprint</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>getOriginalBlueprint</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1542,7 +1546,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L323">blueprintCatalog.ts:323</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L308">blueprintCatalog.ts:308</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1576,7 +1580,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L294">blueprintCatalog.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L280">blueprintCatalog.ts:280</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1584,11 +1588,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>will run through and hydrate all of the blueprints.  This will detect if there are any invalid ones
 									and also speed up queries</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>hydrateAllBlueprints</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1604,24 +1603,18 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L137">blueprintCatalog.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L136">blueprintCatalog.ts:136</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>loads a block of blueprints into the dictionary.  They need to be in the format
-										{
-										blueprintName: { blueprint details ... }
-										blueptintName: { blueprint details ... }
-										}
-										progressCallback can optionally be provided as:
-									function(blueprintName, true|false (loaded), msg)</p>
+									<p>loads a block of blueprints into the dictionary.  They need to be in the format</p>
+									<pre><code><span class="hljs-collection">{
+  blueprintName: <span class="hljs-collection">{ blueprint details ... }</span>
+  blueptintName: <span class="hljs-collection">{ blueprint details ... }</span>
+}</span>
+</code></pre><p>progressCallback can optionally be provided which will be called as each blueprint is loaded.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>loadBlueprints</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1633,6 +1626,9 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> progressCallback: <span class="tsd-signature-type">function</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)</p>
+									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -1676,20 +1672,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L104">blueprintCatalog.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L104">blueprintCatalog.ts:104</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>loads a single blueprint into the dictionary.
-										progressCallback can optionally be provided as:
-									function(blueprintName, true|false (loaded), msg)</p>
+									<p>loads a single blueprint into the dictionary.  If a callback is provided, it will be called when the blueprint is loaded</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>loadSingleBlueprint</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1741,7 +1730,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Dictionary<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L13">dictionary.ts:13</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L13">dictionary.ts:13</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -1759,7 +1748,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L16">dictionary.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L16">dictionary.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1778,7 +1767,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">_catalog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L14">dictionary.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L14">dictionary.ts:14</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -1796,7 +1785,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">_ignore<wbr>Case<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L16">dictionary.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L16">dictionary.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1806,7 +1795,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">_keys<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L15">dictionary.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L15">dictionary.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -1820,7 +1809,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L56">dictionary.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L49">dictionary.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1836,8 +1825,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 								<li>
 									<h5>item: <span class="tsd-signature-type">T</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1854,24 +1841,23 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L76">dictionary.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L69">dictionary.ts:69</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>loads a block of items into the dictionary.  They need to be in the format
-										{
-										key: object,
-										key: object
-									}</p>
+									<p>loads a block of items into the dictionary.  They need to be in the format</p>
+									<pre><code class="lang-json">{
+  key: object,
+  key: object
+}
+</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>block: <span class="tsd-signature-type">Object</span></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1888,18 +1874,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L29">dictionary.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L27">dictionary.ts:27</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Clears the catalog</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>clear</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -1915,7 +1896,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L44">dictionary.ts:44</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L40">dictionary.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1943,7 +1924,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L129">dictionary.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L115">dictionary.ts:115</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1951,11 +1932,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 									<p>find an item by providing a filter that will be called for each item.
 									if limit is provided, it will stop iterating once the limit of found items is met.</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>find</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
@@ -1988,7 +1964,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>matches</p>
 						</li>
 					</ul>
 				</section>
@@ -2002,7 +1977,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L113">dictionary.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L102">dictionary.ts:102</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2014,9 +1989,6 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 							<ul class="tsd-parameters">
 								<li>
 									<h5>callback: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>format: function(item, key)</p>
-									</div>
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
@@ -2054,7 +2026,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L87">dictionary.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L78">dictionary.ts:78</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2082,7 +2054,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L105">dictionary.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L95">dictionary.ts:95</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2104,7 +2076,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L96">dictionary.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L87">dictionary.ts:87</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2130,7 +2102,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Mixin<wbr>Catalog<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L12">mixinCatalog.ts:12</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L12">mixinCatalog.ts:12</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2144,7 +2116,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">mixin<wbr>Dictionary<span class="tsd-signature-symbol">:</span> <a href="index.html#dictionary" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="index.html#mixin" class="tsd-signature-type">Mixin</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L14">mixinCatalog.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L14">mixinCatalog.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2158,18 +2130,13 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L23">mixinCatalog.ts:23</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L21">mixinCatalog.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Clears the mixin and resets everything</p>
 								</div>
-								<dl class="tsd-comment-tags">
-									<dt>method</dt>
-									<dd><p>clear</p>
-									</dd>
-								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
@@ -2185,7 +2152,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L73">mixinCatalog.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L70">mixinCatalog.ts:70</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2207,7 +2174,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L65">mixinCatalog.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L63">mixinCatalog.ts:63</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2225,7 +2192,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="index.html#mixin" class="tsd-signature-type">Mixin</a></h4>
-							<p>Object mixin object</p>
+							<p>mixin object</p>
 						</li>
 					</ul>
 				</section>
@@ -2239,9 +2206,14 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L77">mixinCatalog.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L77">mixinCatalog.ts:77</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Return true if the mixin provided exists</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
@@ -2262,16 +2234,17 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L54">mixinCatalog.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L52">mixinCatalog.ts:52</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>loads a block of mixins into the dictionary.  They need to be in the format
-										{
-										mixinName: { mixin details ... }
-										mixinName: { mixin details ... }
-									}</p>
+									<p>loads a block of mixins into the dictionary.  They need to be in the format</p>
+									<pre><code class="lang-json">{
+  mixinName: { mixin details ... }
+  mixinName: { mixin details ... }
+}
+</code></pre>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2327,14 +2300,12 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L32">mixinCatalog.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L28">mixinCatalog.ts:28</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>loads a single mixin into the dictionary.
-										progressCallback can optionally be provided as:
-									function(mixinName, true|false (loaded), msg)</p>
+									<p>loads a single mixin into the dictionary.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2384,7 +2355,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Blueprint<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L55">blueprintCatalog.ts:55</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L15">blueprintCatalog.ts:15</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -2393,9 +2364,14 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">inherits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L56">blueprintCatalog.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L19">blueprintCatalog.ts:19</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Name of the blueprint this blueprint inherits from</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="blueprint.name" class="tsd-anchor"></a>
@@ -2403,9 +2379,14 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L57">blueprintCatalog.ts:57</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L23">blueprintCatalog.ts:23</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Name of the blueprint.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-interface">
@@ -2414,7 +2395,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L50">blueprintCatalog.ts:50</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L4">blueprintCatalog.ts:4</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -2423,9 +2404,14 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Case<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L51">blueprintCatalog.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L8">blueprintCatalog.ts:8</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Don&#39;t try to match case when loading/searching for blueprints</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="blueprintcatalogoptions.requireinherits" class="tsd-anchor"></a>
@@ -2433,9 +2419,14 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">require<wbr>Inherits<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/blueprintCatalog.ts#L52">blueprintCatalog.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/blueprintCatalog.ts#L12">blueprintCatalog.ts:12</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>An <code>inherits: &#39;value&#39;</code> must be present on each blueprint.  For the top level, specify: <code>inherits: &#39;_base&#39;</code></p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel tsd-member tsd-kind-interface">
@@ -2444,7 +2435,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Dictionary<wbr>Options<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L6">dictionary.ts:6</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L6">dictionary.ts:6</a></li>
 					</ul>
 				</aside>
 				<div class="tsd-comment tsd-typography">
@@ -2458,7 +2449,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">ignore<wbr>Case<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/dictionary.ts#L7">dictionary.ts:7</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/dictionary.ts#L7">dictionary.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -2469,7 +2460,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 				<div class="tsd-signature tsd-kind-icon">Mixin<span class="tsd-signature-symbol">:</span> </div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L5">mixinCatalog.ts:5</a></li>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L5">mixinCatalog.ts:5</a></li>
 					</ul>
 				</aside>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -2478,7 +2469,7 @@ input[type=checkbox]:checked + .tsd-widget:before { background-position: -160px 
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc/ts/mixinCatalog.ts#L6">mixinCatalog.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/tsdoc-addl/ts/mixinCatalog.ts#L6">mixinCatalog.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
