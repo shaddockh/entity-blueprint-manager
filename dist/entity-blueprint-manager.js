@@ -1,5 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var dictionary_1 = require("./dictionary");
 /**
  * Generic blueprint manager.  What this will do is allow you
@@ -9,7 +10,7 @@ var dictionary_1 = require("./dictionary");
  * and give you a fully hydrated blueprint.
  *
  * ie:
- *
+ * ``` json
  * blueprints: {
  *  parent: {
  *      inherits: '_base'
@@ -27,9 +28,10 @@ var dictionary_1 = require("./dictionary");
  *  }
  *
  * }
- *
+ * ```
  * generateInstanceBlueprint('child') will create:
  *
+ * ``` json
  * {
  *   inherits: 'child'
  *   id: 10293
@@ -38,15 +40,8 @@ var dictionary_1 = require("./dictionary");
  *      ,val2: 'valChilde'
  *      ,val3: 'val3'
  *  }
- * }
- *
- * options: {
- *    ignoreCase: true -- don't try to match case when loading/searching fror blueprints
- *    requireInherits: true -- an inherits: 'value' must be present on each blueprint.  For the top level, specify: inherits: '_base'
- *
- * }
+ * ```
  */
-"use strict";
 var BlueprintCatalog = (function () {
     function BlueprintCatalog(opts) {
         if (opts === void 0) { opts = {
@@ -68,8 +63,6 @@ var BlueprintCatalog = (function () {
     }
     /**
      * Clears the blueprints and resets everything
-     *
-     * @method clear
      */
     BlueprintCatalog.prototype.clear = function () {
         this.blueprintDictionary.clear();
@@ -77,14 +70,7 @@ var BlueprintCatalog = (function () {
         this.needsReindexing = false;
     };
     /**
-     * loads a single blueprint into the dictionary.
-     * progressCallback can optionally be provided as:
-     *   function(blueprintName, true|false (loaded), msg)
-     *
-     * @method loadSingleBlueprint
-     * @param {object} blueprint
-     * @param {string} [blueprintName]
-     * @param {function} [progressCallback] Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
+     * loads a single blueprint into the dictionary.  If a callback is provided, it will be called when the blueprint is loaded
      */
     BlueprintCatalog.prototype.loadSingleBlueprint = function (blueprint, blueprintName, progressCallback) {
         blueprint.name = blueprint.name || blueprintName;
@@ -106,16 +92,15 @@ var BlueprintCatalog = (function () {
     };
     /**
      * loads a block of blueprints into the dictionary.  They need to be in the format
+     * ```
      * {
      *   blueprintName: { blueprint details ... }
      *   blueptintName: { blueprint details ... }
      * }
-     * progressCallback can optionally be provided as:
-     *   function(blueprintName, true|false (loaded), msg)
-     *
-     * @method loadBlueprints
-     * @param {object} block a block of blueprints to load with keys as the name of each blueprint
-     * @param {function} [progressCallback] Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
+     *```
+     * progressCallback can optionally be provided which will be called as each blueprint is loaded.
+     * @param block a block of blueprints to load with keys as the name of each blueprint
+     * @param progressCallback Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)
      */
     BlueprintCatalog.prototype.loadBlueprints = function (block, progressCallback) {
         for (var blueprintName in block) {
@@ -156,10 +141,9 @@ var BlueprintCatalog = (function () {
      * will return a blueprint hydrating it with values from it's lineage, optionally extending it with
      * the blueprint provided with 'extendwith'
      *
-     * @method getBlueprint
      * @param name the name of the blueprint to return.  Must already have been loaded into the library.
-     * @param {object} [extendWith] Optionally extend the returned blueprint with this blueprint
-     * @return {object} hydrated blueprint
+     * @param extendWith Optionally extend the returned blueprint with this blueprint
+     * @return hydrated blueprint
      */
     BlueprintCatalog.prototype.getBlueprint = function (name, extendWith) {
         var result;
@@ -193,9 +177,8 @@ var BlueprintCatalog = (function () {
     /**
      * returns the original (un-hydrated) version of the blueprint
      *
-     * @method getOriginalBlueprint
      * @param name Name of the blueprint to return.  Must already have been loaded into the library
-     * @return {object} un-hydrated blueprint
+     * @return un-hydrated blueprint
      */
     BlueprintCatalog.prototype.getOriginalBlueprint = function (name) {
         return this.blueprintDictionary.get(name);
@@ -203,8 +186,7 @@ var BlueprintCatalog = (function () {
     /**
      * returns an array of all blueprint names in the dictionary
      *
-     * @method getAllBlueprintNames
-     * @return {Array} array of all blueprint names
+     * @return array of all blueprint names
      */
     BlueprintCatalog.prototype.getAllBlueprintNames = function () {
         return this.blueprintDictionary.getAllKeys();
@@ -212,10 +194,6 @@ var BlueprintCatalog = (function () {
     /**
      * Gets a fully fleshed out blueprint from an instance structure.  The instance will not be cached
      * in the blueprint database
-     *
-     * @method getBlueprintFromInstance
-     * @param {object} instance
-     * @return {object}
      */
     BlueprintCatalog.prototype.getBlueprintFromInstance = function (instance) {
         if (typeof instance.inherits === "undefined" || instance.inherits === "_base") {
@@ -229,10 +207,7 @@ var BlueprintCatalog = (function () {
      * returns all blueprints that inherit from the provided base blueprint.  If recurse is true
      * then it will walk down the entire tree, otherwise it will only return direct descendants
      *
-     * @method getBlueprintDescendingFrom
-     * @param {string} baseBlueprintName
-     * @param {boolean} [recurse]
-     * @return {Array} a list of all blueprints that descend from baseBlueprintName
+     * @return a list of all blueprints that descend from baseBlueprintName
      */
     BlueprintCatalog.prototype.getBlueprintsDescendingFrom = function (baseBlueprintName, recurse) {
         var results = this.blueprintDictionary.find(function (item) {
@@ -252,8 +227,6 @@ var BlueprintCatalog = (function () {
     /**
      * will run through and hydrate all of the blueprints.  This will detect if there are any invalid ones
      * and also speed up queries
-     *
-     * @method hydrateAllBlueprints
      */
     BlueprintCatalog.prototype.hydrateAllBlueprints = function () {
         var _this = this;
@@ -266,10 +239,9 @@ var BlueprintCatalog = (function () {
      * find a blueprint by providing a filter that will be called for each blueprint.
      * if limit is provided, it will stop iterating once the limit of found blueprints is met.
      *
-     * @method find
-     * @param {function} filt function to call with each blueprint to determine if it matches
-     * @param {int} limit if provided, then limit the results to this amount
-     * @return {Array} matches
+     * @param filt function to call with each blueprint to determine if it matches
+     * @param limit if provided, then limit the results to this amount
+     * @return matches
      */
     BlueprintCatalog.prototype.find = function (filt, limit) {
         if (this.needsReindexing) {
@@ -279,8 +251,8 @@ var BlueprintCatalog = (function () {
     };
     /**
      * @method hasBlueprint
-     * @param {string} blueprintName Name of blueprint to check fo
-     * @return {bool} true if the blueprint exists in the library
+     * @param blueprintName Name of blueprint to check fo
+     * @return true if the blueprint exists in the library
      */
     BlueprintCatalog.prototype.hasBlueprint = function (blueprintName) {
         return this.blueprintDictionary.containsKey(blueprintName);
@@ -295,6 +267,7 @@ exports.BlueprintCatalog = BlueprintCatalog;
  * Created by shaddockh on 9/28/14.
  */
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Dictionary class.  Allows for creating a case-insensitive dictionary
  */
@@ -310,8 +283,6 @@ var Dictionary = (function () {
     }
     /**
      * Clears the catalog
-     *
-     * @method clear
      */
     Dictionary.prototype.clear = function () {
         this._catalog = {};
@@ -323,8 +294,6 @@ var Dictionary = (function () {
     };
     /**
      * Return true if the dictionary contains the provided key
-     * @param key
-     * @returns {boolean|*}
      */
     Dictionary.prototype.containsKey = function (key) {
         key = this._ignoreCase ? key.toUpperCase() : key;
@@ -333,9 +302,6 @@ var Dictionary = (function () {
     /**
      * loads a single item into the dictionary with the provided key name.  Will throw an error if there is
      * already an item with this key in the catalog.
-     *
-     * @param key
-     * @param item
      */
     Dictionary.prototype.add = function (key, item) {
         var newkey = this._ignoreCase ? key.toUpperCase() : key;
@@ -349,12 +315,12 @@ var Dictionary = (function () {
     };
     /**
      * loads a block of items into the dictionary.  They need to be in the format
+     * ``` json
      * {
      *   key: object,
      *   key: object
      * }
-     *
-     * @param block
+     * ```
      */
     Dictionary.prototype.addItems = function (block) {
         for (var itemName in block) {
@@ -364,8 +330,6 @@ var Dictionary = (function () {
     ;
     /**
      * returns an item specified by the key provided in the catalog
-     * @param {string} key
-     * @returns {*}
      */
     Dictionary.prototype.get = function (key) {
         var newkey = this._ignoreCase ? key.toUpperCase() : key;
@@ -383,7 +347,6 @@ var Dictionary = (function () {
     ;
     /**
      * returns an array of all key names in the catalog
-     * @returns {Array}
      */
     Dictionary.prototype.getAllKeys = function () {
         return this._keys.slice();
@@ -391,7 +354,6 @@ var Dictionary = (function () {
     ;
     /**
      * iterates over the items in the catalog and executes callback for each element
-     * @param callback format: function(item, key)
      */
     Dictionary.prototype.forEach = function (callback) {
         var dict = this;
@@ -403,11 +365,12 @@ var Dictionary = (function () {
     /**
      * find an item by providing a filter that will be called for each item.
      * if limit is provided, it will stop iterating once the limit of found items is met.
-     *
-     * @method find
-     * @param {function} filt
-     * @param {int} limit number of elements to limit result to
-     * @return {Array} matches
+     * @param filt a filter function that returns true for each element that should match the find
+     * @param limit number of elements to limit result to
+     * @example
+     * ```
+     *   const results = dict.find(el => el.active == true);
+     * ```
      */
     Dictionary.prototype.find = function (filt, limit) {
         var results = [];
@@ -434,12 +397,14 @@ exports.Dictionary = Dictionary;
 function __export(m) {
     for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
 }
+Object.defineProperty(exports, "__esModule", { value: true });
 __export(require("./dictionary"));
 __export(require("./blueprintCatalog"));
 __export(require("./mixinCatalog"));
 
 },{"./blueprintCatalog":1,"./dictionary":2,"./mixinCatalog":4}],4:[function(require,module,exports){
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var dictionary_1 = require("./dictionary");
 "use strict";
 /**
@@ -453,16 +418,12 @@ var MixinCatalog = (function () {
     }
     /**
      * Clears the mixin and resets everything
-     *
-     * @method clear
      */
     MixinCatalog.prototype.clear = function () {
         this.mixinDictionary.clear();
     };
     /**
      * loads a single mixin into the dictionary.
-     * progressCallback can optionally be provided as:
-     *   function(mixinName, true|false (loaded), msg)
      */
     MixinCatalog.prototype.loadSingleMixin = function (mixin, progressCallback) {
         try {
@@ -479,10 +440,12 @@ var MixinCatalog = (function () {
     };
     /**
      * loads a block of mixins into the dictionary.  They need to be in the format
+     * ``` json
      * {
      *   mixinName: { mixin details ... }
      *   mixinName: { mixin details ... }
      * }
+     * ```
      * @param block block of mixins
      * @param progressCallback function to be provided as callback with signature function(mixinName, bool loaded, message)
      */
@@ -494,18 +457,20 @@ var MixinCatalog = (function () {
     /**
      * will return a component by name
      * @param name name of the mixin to retrieve
-     * @returns Object mixin object
+     * @returns mixin object
      */
     MixinCatalog.prototype.getMixin = function (name) {
         return this.mixinDictionary.get(name);
     };
     /**
      * will return an array of mixin names
-     * @returns {Array}
      */
     MixinCatalog.prototype.getAllMixinNames = function () {
         return this.mixinDictionary.getAllKeys();
     };
+    /**
+     * Return true if the mixin provided exists
+     */
     MixinCatalog.prototype.hasMixin = function (mixinName) {
         return this.mixinDictionary.containsKey(mixinName);
     };

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Entity Blueprint Manager | Entity Blueprint Manager</title>
+	<title>BlueprintCatalog | Entity Blueprint Manager</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -909,53 +909,743 @@ img { max-width: 100%; }
 </header>
 <nav class="tsd-navigation secondary">
 	<ul>
-		<li class=" tsd-kind-class">
-			<a href="classes/blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a>
+		<li class="current tsd-kind-class">
+			<a href="blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a>
+			<ul>
+				<li class=" tsd-kind-constructor tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#constructor" class="tsd-kind-icon">constructor</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="blueprintcatalog.html#blueprintdictionary" class="tsd-kind-icon">blueprint<wbr>Dictionary</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="blueprintcatalog.html#debugmode" class="tsd-kind-icon">debug<wbr>Mode</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="blueprintcatalog.html#hydratedblueprints" class="tsd-kind-icon">hydrated<wbr>Blueprints</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="blueprintcatalog.html#needsreindexing" class="tsd-kind-icon">needs<wbr>Reindexing</a>
+				</li>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="blueprintcatalog.html#options" class="tsd-kind-icon">options</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#clear" class="tsd-kind-icon">clear</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#extendblueprint" class="tsd-kind-icon">extend<wbr>Blueprint</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#find" class="tsd-kind-icon">find</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#getallblueprintnames" class="tsd-kind-icon">get<wbr>All<wbr>Blueprint<wbr>Names</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#getblueprint" class="tsd-kind-icon">get<wbr>Blueprint</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#getblueprintfrominstance" class="tsd-kind-icon">get<wbr>Blueprint<wbr>From<wbr>Instance</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#getblueprintsdescendingfrom" class="tsd-kind-icon">get<wbr>Blueprints<wbr>Descending<wbr>From</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#getoriginalblueprint" class="tsd-kind-icon">get<wbr>Original<wbr>Blueprint</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#hasblueprint" class="tsd-kind-icon">has<wbr>Blueprint</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#hydrateallblueprints" class="tsd-kind-icon">hydrate<wbr>All<wbr>Blueprints</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#loadblueprints" class="tsd-kind-icon">load<wbr>Blueprints</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="blueprintcatalog.html#loadsingleblueprint" class="tsd-kind-icon">load<wbr>Single<wbr>Blueprint</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="classes/dictionary.html" class="tsd-kind-icon">Dictionary</a>
+			<a href="dictionary.html" class="tsd-kind-icon">Dictionary</a>
 		</li>
 		<li class=" tsd-kind-class">
-			<a href="classes/mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a>
+			<a href="mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a>
+			<a href="../interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a>
+			<a href="../interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a>
+			<a href="../interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/mixin.html" class="tsd-kind-icon">Mixin</a>
+			<a href="../interfaces/mixin.html" class="tsd-kind-icon">Mixin</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>Generic blueprint manager.  What this will do is allow you
+						to define a hierarchy of templates that descend from each other.
+						when creating a blueprint, it will walk up the entire tree of the
+						hierarchy and fill in any blank values that are provided at parent levels
+					and give you a fully hydrated blueprint.</p>
+				</div>
+				<p>ie:</p>
+				<pre><code class="lang-json">blueprints: {
+ parent: {
+     inherits: &#39;_base&#39;
+     ,component1: {
+         val1: &#39;value&#39;
+         ,val2: &#39;valParent&#39;
+     }
+ },
+ child: {
+     inherits: &#39;parent&#39;
+     ,component1: {
+         val3: &#39;val3&#39;
+         ,val2: &#39;valChild&#39;  //will override parent!
+     }
+ }
+
+}
+</code></pre>
+				<p>generateInstanceBlueprint(&#39;child&#39;) will create:</p>
+				<pre><code class="lang-json">{
+  inherits: &#39;child&#39;
+  id: 10293
+  ,component1: {
+     val1: &#39;value&#39;
+     ,val2: &#39;valChilde&#39;
+     ,val3: &#39;val3&#39;
+ }
+</code></pre>
+			</div>
+		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">BlueprintCatalog</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
 					<section class="tsd-index-section ">
-						<h3>Classes</h3>
+						<h3>Constructors</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-class"><a href="classes/blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a></li>
-							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
-							<li class="tsd-kind-class"><a href="classes/mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a></li>
+							<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="blueprintcatalog.html#constructor" class="tsd-kind-icon">constructor</a></li>
+						</ul>
+					</section>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Properties</h3>
+						<ul class="tsd-index-list">
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="blueprintcatalog.html#blueprintdictionary" class="tsd-kind-icon">blueprint<wbr>Dictionary</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="blueprintcatalog.html#debugmode" class="tsd-kind-icon">debug<wbr>Mode</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="blueprintcatalog.html#hydratedblueprints" class="tsd-kind-icon">hydrated<wbr>Blueprints</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="blueprintcatalog.html#needsreindexing" class="tsd-kind-icon">needs<wbr>Reindexing</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="blueprintcatalog.html#options" class="tsd-kind-icon">options</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
-						<h3>Interfaces</h3>
+						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface"><a href="interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/mixin.html" class="tsd-kind-icon">Mixin</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#clear" class="tsd-kind-icon">clear</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#extendblueprint" class="tsd-kind-icon">extend<wbr>Blueprint</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#find" class="tsd-kind-icon">find</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#getallblueprintnames" class="tsd-kind-icon">get<wbr>All<wbr>Blueprint<wbr>Names</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#getblueprint" class="tsd-kind-icon">get<wbr>Blueprint</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#getblueprintfrominstance" class="tsd-kind-icon">get<wbr>Blueprint<wbr>From<wbr>Instance</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#getblueprintsdescendingfrom" class="tsd-kind-icon">get<wbr>Blueprints<wbr>Descending<wbr>From</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#getoriginalblueprint" class="tsd-kind-icon">get<wbr>Original<wbr>Blueprint</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#hasblueprint" class="tsd-kind-icon">has<wbr>Blueprint</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#hydrateallblueprints" class="tsd-kind-icon">hydrate<wbr>All<wbr>Blueprints</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#loadblueprints" class="tsd-kind-icon">load<wbr>Blueprints</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="blueprintcatalog.html#loadsingleblueprint" class="tsd-kind-icon">load<wbr>Single<wbr>Blueprint</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Constructors</h2>
+			<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<a name="constructor" class="tsd-anchor"></a>
+				<h3>constructor</h3>
+				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Blueprint<wbr>Catalog<span class="tsd-signature-symbol">(</span>opts<span class="tsd-signature-symbol">?: </span><a href="../interfaces/blueprintcatalogoptions.html" class="tsd-signature-type">BlueprintCatalogOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="blueprintcatalog.html" class="tsd-signature-type">BlueprintCatalog</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L70">blueprintCatalog.ts:70</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5><span class="tsd-flag ts-flagDefault value">Default value</span> opts: <a href="../interfaces/blueprintcatalogoptions.html" class="tsd-signature-type">BlueprintCatalogOptions</a><span class="tsd-signature-symbol"> =&nbsp;{ignoreCase: true,requireInherits: true}</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="blueprintcatalog.html" class="tsd-signature-type">BlueprintCatalog</a></h4>
+					</li>
+				</ul>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="blueprintdictionary" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> blueprint<wbr>Dictionary</h3>
+				<div class="tsd-signature tsd-kind-icon">blueprint<wbr>Dictionary<span class="tsd-signature-symbol">:</span> <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L86">blueprintCatalog.ts:86</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="debugmode" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> debug<wbr>Mode</h3>
+				<div class="tsd-signature tsd-kind-icon">debug<wbr>Mode<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L88">blueprintCatalog.ts:88</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="hydratedblueprints" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> hydrated<wbr>Blueprints</h3>
+				<div class="tsd-signature tsd-kind-icon">hydrated<wbr>Blueprints<span class="tsd-signature-symbol">:</span> <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L87">blueprintCatalog.ts:87</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="needsreindexing" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> needs<wbr>Reindexing</h3>
+				<div class="tsd-signature tsd-kind-icon">needs<wbr>Reindexing<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L89">blueprintCatalog.ts:89</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="options" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> options</h3>
+				<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <a href="../interfaces/blueprintcatalogoptions.html" class="tsd-signature-type">BlueprintCatalogOptions</a><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L90">blueprintCatalog.ts:90</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="clear" class="tsd-anchor"></a>
+				<h3>clear</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L95">blueprintCatalog.ts:95</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Clears the blueprints and resets everything</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="extendblueprint" class="tsd-anchor"></a>
+				<h3>extend<wbr>Blueprint</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">extend<wbr>Blueprint<span class="tsd-signature-symbol">(</span>orig<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, extendwith<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, inPlaceExtend<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></li>
+					<li class="tsd-signature tsd-kind-icon">extend<wbr>Blueprint<span class="tsd-signature-symbol">(</span>orig<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a>, extendwith<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a>, inPlaceExtend<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L153">blueprintCatalog.ts:153</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Will extend either a blueprint of a sub component of a blueprint, returning a new blueprint containing the combination.
+								The original blueprint will not be modified unless inPlaceExtend is set.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>orig: <span class="tsd-signature-type">Object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>original blueprint to extend</p>
+								</div>
+							</li>
+							<li>
+								<h5>extendwith: <span class="tsd-signature-type">Object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>object to extend original blueprint with</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> inPlaceExtend: <span class="tsd-signature-type">boolean</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>if true, will modify the orig blueprint.  Defaults to false</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h4>
+						<p>New object that contains the merged values</p>
+					</li>
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L154">blueprintCatalog.ts:154</a></li>
+							</ul>
+						</aside>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>orig: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+							</li>
+							<li>
+								<h5>extendwith: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> inPlaceExtend: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="find" class="tsd-anchor"></a>
+				<h3>find</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">find<span class="tsd-signature-symbol">(</span>filt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, limit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L295">blueprintCatalog.ts:295</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>find a blueprint by providing a filter that will be called for each blueprint.
+								if limit is provided, it will stop iterating once the limit of found blueprints is met.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>filt: <span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>function to call with each blueprint to determine if it matches</p>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>item: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> limit: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>if provided, then limit the results to this amount</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">[]</span></h4>
+						<p>matches</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getallblueprintnames" class="tsd-anchor"></a>
+				<h3>get<wbr>All<wbr>Blueprint<wbr>Names</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Blueprint<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L236">blueprintCatalog.ts:236</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>returns an array of all blueprint names in the dictionary</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						<p>array of all blueprint names</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getblueprint" class="tsd-anchor"></a>
+				<h3>get<wbr>Blueprint</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Blueprint<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, extendWith<span class="tsd-signature-symbol">?: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L191">blueprintCatalog.ts:191</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>will return a blueprint hydrating it with values from it&#39;s lineage, optionally extending it with
+								the blueprint provided with &#39;extendwith&#39;</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>the name of the blueprint to return.  Must already have been loaded into the library.</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> extendWith: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Optionally extend the returned blueprint with this blueprint</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h4>
+						<p>hydrated blueprint</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getblueprintfrominstance" class="tsd-anchor"></a>
+				<h3>get<wbr>Blueprint<wbr>From<wbr>Instance</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Blueprint<wbr>From<wbr>Instance<span class="tsd-signature-symbol">(</span>instance<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L244">blueprintCatalog.ts:244</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Gets a fully fleshed out blueprint from an instance structure.  The instance will not be cached
+								in the blueprint database</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>instance: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getblueprintsdescendingfrom" class="tsd-anchor"></a>
+				<h3>get<wbr>Blueprints<wbr>Descending<wbr>From</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Blueprints<wbr>Descending<wbr>From<span class="tsd-signature-symbol">(</span>baseBlueprintName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, recurse<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L259">blueprintCatalog.ts:259</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>returns all blueprints that inherit from the provided base blueprint.  If recurse is true
+								then it will walk down the entire tree, otherwise it will only return direct descendants</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>baseBlueprintName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5>recurse: <span class="tsd-signature-type">boolean</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">[]</span></h4>
+						<p>a list of all blueprints that descend from baseBlueprintName</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getoriginalblueprint" class="tsd-anchor"></a>
+				<h3>get<wbr>Original<wbr>Blueprint</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Original<wbr>Blueprint<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L227">blueprintCatalog.ts:227</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>returns the original (un-hydrated) version of the blueprint</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Name of the blueprint to return.  Must already have been loaded into the library</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h4>
+						<p>un-hydrated blueprint</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="hasblueprint" class="tsd-anchor"></a>
+				<h3>has<wbr>Blueprint</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">has<wbr>Blueprint<span class="tsd-signature-symbol">(</span>blueprintName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L308">blueprintCatalog.ts:308</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<dl class="tsd-comment-tags">
+								<dt>method</dt>
+								<dd><p>hasBlueprint</p>
+								</dd>
+							</dl>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>blueprintName: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Name of blueprint to check fo</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						<p>true if the blueprint exists in the library</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="hydrateallblueprints" class="tsd-anchor"></a>
+				<h3>hydrate<wbr>All<wbr>Blueprints</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">hydrate<wbr>All<wbr>Blueprints<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L280">blueprintCatalog.ts:280</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>will run through and hydrate all of the blueprints.  This will detect if there are any invalid ones
+								and also speed up queries</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="loadblueprints" class="tsd-anchor"></a>
+				<h3>load<wbr>Blueprints</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">load<wbr>Blueprints<span class="tsd-signature-symbol">(</span>block<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, progressCallback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L136">blueprintCatalog.ts:136</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>loads a block of blueprints into the dictionary.  They need to be in the format</p>
+								<pre><code>{
+  blueprintName: { blueprint <span class="hljs-selector-tag">details</span> ... }
+  blueptintName: { blueprint <span class="hljs-selector-tag">details</span> ... }
+}
+</code></pre><p>progressCallback can optionally be provided which will be called as each blueprint is loaded.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>block: <span class="tsd-signature-type">Object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>a block of blueprints to load with keys as the name of each blueprint</p>
+								</div>
+							</li>
+							<li>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> progressCallback: <span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>Callback with the signature  function(blueprintName, loaded (boolean), message, blueprint)</p>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>blueprintName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, blueprint<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>blueprintName: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>error: <span class="tsd-signature-type">boolean</span></h5>
+													</li>
+													<li>
+														<h5>message: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>blueprint: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="loadsingleblueprint" class="tsd-anchor"></a>
+				<h3>load<wbr>Single<wbr>Blueprint</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">load<wbr>Single<wbr>Blueprint<span class="tsd-signature-symbol">(</span>blueprint<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a>, blueprintName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, progressCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/blueprintCatalog.ts#L104">blueprintCatalog.ts:104</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>loads a single blueprint into the dictionary.  If a callback is provided, it will be called when the blueprint is loaded</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>blueprint: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+							</li>
+							<li>
+								<h5>blueprintName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+							<li>
+								<h5>progressCallback: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>blueprintName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, error<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, blueprint<span class="tsd-signature-symbol">: </span><a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>blueprintName: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>error: <span class="tsd-signature-type">boolean</span></h5>
+													</li>
+													<li>
+														<h5>message: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>blueprint: <a href="../interfaces/blueprint.html" class="tsd-signature-type">Blueprint</a></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">

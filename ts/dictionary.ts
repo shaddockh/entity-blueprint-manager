@@ -109,8 +109,12 @@ export class Dictionary<T> {
     /**
      * find an item by providing a filter that will be called for each item.
      * if limit is provided, it will stop iterating once the limit of found items is met.
-     *
+     * @param filt a filter function that returns true for each element that should match the find
      * @param limit number of elements to limit result to
+     * @example
+     * ```
+     *   const results = dict.find(el => el.active == true);
+     * ```
      */
     find(filt: (item: T) => boolean, limit?: number): T[] {
         let results: T[] = [];
