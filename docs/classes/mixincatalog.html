@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Entity Blueprint Manager | Entity Blueprint Manager</title>
+	<title>MixinCatalog | Entity Blueprint Manager</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style type="text/css">/*! normalize.css v1.1.3 | MIT License | git.io/normalize */
@@ -910,52 +910,331 @@ img { max-width: 100%; }
 <nav class="tsd-navigation secondary">
 	<ul>
 		<li class=" tsd-kind-class">
-			<a href="classes/blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a>
+			<a href="blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a>
 		</li>
 		<li class=" tsd-kind-class tsd-has-type-parameter">
-			<a href="classes/dictionary.html" class="tsd-kind-icon">Dictionary</a>
+			<a href="dictionary.html" class="tsd-kind-icon">Dictionary</a>
 		</li>
-		<li class=" tsd-kind-class">
-			<a href="classes/mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a>
+		<li class="current tsd-kind-class">
+			<a href="mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a>
+			<ul>
+				<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a href="mixincatalog.html#mixindictionary" class="tsd-kind-icon">mixin<wbr>Dictionary</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#clear" class="tsd-kind-icon">clear</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#getallmixinnames" class="tsd-kind-icon">get<wbr>All<wbr>Mixin<wbr>Names</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#getmixin" class="tsd-kind-icon">get<wbr>Mixin</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#hasmixin" class="tsd-kind-icon">has<wbr>Mixin</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#loadmixins" class="tsd-kind-icon">load<wbr>Mixins</a>
+				</li>
+				<li class=" tsd-kind-method tsd-parent-kind-class">
+					<a href="mixincatalog.html#loadsinglemixin" class="tsd-kind-icon">load<wbr>Single<wbr>Mixin</a>
+				</li>
+			</ul>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a>
+			<a href="../interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a>
+			<a href="../interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a>
+			<a href="../interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a>
 		</li>
 		<li class=" tsd-kind-interface">
-			<a href="interfaces/mixin.html" class="tsd-kind-icon">Mixin</a>
+			<a href="../interfaces/mixin.html" class="tsd-kind-icon">Mixin</a>
 		</li>
 	</ul>
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>mixin catalog</p>
+				</div>
+			</div>
+		</section>
+		<section class="tsd-panel tsd-hierarchy">
+			<h3>Hierarchy</h3>
+			<ul class="tsd-hierarchy">
+				<li>
+					<span class="target">MixinCatalog</span>
+				</li>
+			</ul>
+		</section>
 		<section class="tsd-panel-group tsd-index-group">
 			<h2>Index</h2>
 			<section class="tsd-panel tsd-index-panel">
 				<div class="tsd-index-content">
-					<section class="tsd-index-section ">
-						<h3>Classes</h3>
+					<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<h3>Properties</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-class"><a href="classes/blueprintcatalog.html" class="tsd-kind-icon">Blueprint<wbr>Catalog</a></li>
-							<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/dictionary.html" class="tsd-kind-icon">Dictionary</a></li>
-							<li class="tsd-kind-class"><a href="classes/mixincatalog.html" class="tsd-kind-icon">Mixin<wbr>Catalog</a></li>
+							<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="mixincatalog.html#mixindictionary" class="tsd-kind-icon">mixin<wbr>Dictionary</a></li>
 						</ul>
 					</section>
 					<section class="tsd-index-section ">
-						<h3>Interfaces</h3>
+						<h3>Methods</h3>
 						<ul class="tsd-index-list">
-							<li class="tsd-kind-interface"><a href="interfaces/blueprint.html" class="tsd-kind-icon">Blueprint</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/blueprintcatalogoptions.html" class="tsd-kind-icon">Blueprint<wbr>Catalog<wbr>Options</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/dictionaryoptions.html" class="tsd-kind-icon">Dictionary<wbr>Options</a></li>
-							<li class="tsd-kind-interface"><a href="interfaces/mixin.html" class="tsd-kind-icon">Mixin</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#clear" class="tsd-kind-icon">clear</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#getallmixinnames" class="tsd-kind-icon">get<wbr>All<wbr>Mixin<wbr>Names</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#getmixin" class="tsd-kind-icon">get<wbr>Mixin</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#hasmixin" class="tsd-kind-icon">has<wbr>Mixin</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#loadmixins" class="tsd-kind-icon">load<wbr>Mixins</a></li>
+							<li class="tsd-kind-method tsd-parent-kind-class"><a href="mixincatalog.html#loadsinglemixin" class="tsd-kind-icon">load<wbr>Single<wbr>Mixin</a></li>
 						</ul>
 					</section>
 				</div>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<h2>Properties</h2>
+			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<a name="mixindictionary" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagPrivate">Private</span> mixin<wbr>Dictionary</h3>
+				<div class="tsd-signature tsd-kind-icon">mixin<wbr>Dictionary<span class="tsd-signature-symbol">:</span> <a href="dictionary.html" class="tsd-signature-type">Dictionary</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/mixin.html" class="tsd-signature-type">Mixin</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Dictionary&lt;Mixin&gt;({ignoreCase: true})</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L14">mixinCatalog.ts:14</a></li>
+					</ul>
+				</aside>
+			</section>
+		</section>
+		<section class="tsd-panel-group tsd-member-group ">
+			<h2>Methods</h2>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="clear" class="tsd-anchor"></a>
+				<h3>clear</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">clear<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L21">mixinCatalog.ts:21</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Clears the mixin and resets everything</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getallmixinnames" class="tsd-anchor"></a>
+				<h3>get<wbr>All<wbr>Mixin<wbr>Names</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>All<wbr>Mixin<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L70">mixinCatalog.ts:70</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>will return an array of mixin names</p>
+							</div>
+						</div>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="getmixin" class="tsd-anchor"></a>
+				<h3>get<wbr>Mixin</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">get<wbr>Mixin<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/mixin.html" class="tsd-signature-type">Mixin</a></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L63">mixinCatalog.ts:63</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>will return a component by name</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>name: <span class="tsd-signature-type">string</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>name of the mixin to retrieve</p>
+								</div>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <a href="../interfaces/mixin.html" class="tsd-signature-type">Mixin</a></h4>
+						<p>mixin object</p>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="hasmixin" class="tsd-anchor"></a>
+				<h3>has<wbr>Mixin</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">has<wbr>Mixin<span class="tsd-signature-symbol">(</span>mixinName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L77">mixinCatalog.ts:77</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Return true if the mixin provided exists</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>mixinName: <span class="tsd-signature-type">string</span></h5>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="loadmixins" class="tsd-anchor"></a>
+				<h3>load<wbr>Mixins</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">load<wbr>Mixins<span class="tsd-signature-symbol">(</span>block<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span>, progressCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L52">mixinCatalog.ts:52</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>loads a block of mixins into the dictionary.  They need to be in the format</p>
+								<pre><code class="lang-json">{
+  mixinName: { mixin details ... }
+  mixinName: { mixin details ... }
+}
+</code></pre>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>block: <span class="tsd-signature-type">Object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>block of mixins</p>
+								</div>
+							</li>
+							<li>
+								<h5>progressCallback: <span class="tsd-signature-type">function</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>function to be provided as callback with signature function(mixinName, bool loaded, message)</p>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>mixinName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, message<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>mixinName: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>loaded: <span class="tsd-signature-type">boolean</span></h5>
+													</li>
+													<li>
+														<h5>message: <span class="tsd-signature-type">string</span></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+				<a name="loadsinglemixin" class="tsd-anchor"></a>
+				<h3>load<wbr>Single<wbr>Mixin</h3>
+				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+					<li class="tsd-signature tsd-kind-icon">load<wbr>Single<wbr>Mixin<span class="tsd-signature-symbol">(</span>mixin<span class="tsd-signature-symbol">: </span><a href="../interfaces/mixin.html" class="tsd-signature-type">Mixin</a>, progressCallback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				</ul>
+				<ul class="tsd-descriptions">
+					<li class="tsd-description">
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/shaddockh/entity-blueprint-manager/blob/94cc076/ts/mixinCatalog.ts#L28">mixinCatalog.ts:28</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>loads a single mixin into the dictionary.</p>
+							</div>
+						</div>
+						<h4 class="tsd-parameters-title">Parameters</h4>
+						<ul class="tsd-parameters">
+							<li>
+								<h5>mixin: <a href="../interfaces/mixin.html" class="tsd-signature-type">Mixin</a></h5>
+							</li>
+							<li>
+								<h5>progressCallback: <span class="tsd-signature-type">function</span></h5>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter-siganture">
+										<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+											<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>mixinName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, loaded<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, msg<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+										</ul>
+										<ul class="tsd-descriptions">
+											<li class="tsd-description">
+												<h4 class="tsd-parameters-title">Parameters</h4>
+												<ul class="tsd-parameters">
+													<li>
+														<h5>mixinName: <span class="tsd-signature-type">string</span></h5>
+													</li>
+													<li>
+														<h5>loaded: <span class="tsd-signature-type">boolean</span></h5>
+													</li>
+													<li>
+														<h5>msg: <span class="tsd-signature-type">string</span></h5>
+													</li>
+												</ul>
+												<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+					</li>
+				</ul>
 			</section>
 		</section>
 		<footer class="with-border-bottom">
